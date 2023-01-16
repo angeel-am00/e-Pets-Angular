@@ -7,6 +7,7 @@ import { LoginComponent } from './login/login.component';
 import { RegistroComponent } from './registro/registro.component';
 
 import { RouterModule } from '@angular/router';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { RouterModule } from '@angular/router';
       {path: 'registro', component: RegistroComponent},
       {path: 'home', component: HomeComponent},
     ]),
+    NgbModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
