@@ -7,6 +7,7 @@ import { LoginComponent } from './login/login.component';
 import { RegistroComponent } from './registro/registro.component';
 
 import { RouterModule } from '@angular/router';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,13 @@ import { RouterModule } from '@angular/router';
     RegistroComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    RouterModule.forRoot([
+      {path: 'login', component: LoginComponent},
+      {path: 'registro', component: RegistroComponent},
+      {path: 'home', component: HomeComponent},
+    ]),
+    NgbModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

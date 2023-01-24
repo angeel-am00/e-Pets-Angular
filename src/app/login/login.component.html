@@ -1,1 +1,35 @@
-<p>login works!</p>
+<div class="container w-75 bg-primary mt-5 rounded shadow">
+  <div class="row align-items-stretch">
+
+    <div class="col bg d-none d-lg-block col-md-5 col-lg-5 col-xl-6 rounded">
+
+    </div>
+    <div class="col bg-white p-5 rounded-end">
+      <h2 class="fw-bold text-center py-5">Iniciar Sesión</h2>
+      <form>
+        <div class="mb-4">
+          <label for="username"> Email:  </label>
+          <input type="email" class="form-control" id="username" name="username"
+                 placeholder="Ingrese su email" required autocomplete="off">
+        </div>
+
+        <div class="mb-4">
+          <label for="password"> Contraseña:</label>
+          <input type="password"  class="form-control" id="password" name="password"
+                 placeholder="Ingrese su contraseña" required>
+        </div>
+
+        <div class="d-grid">
+          <input type="submit" class="form-control btn btn-primary" id="login-submit"
+                 value="Iniciar Sesión"/>
+        </div>
+
+        <div class="my-3">
+          <span>No tienes cuenta? <a class="link-danger" (click)="ruta()">Regístrate</a></span> <br>
+          <span><a href="#">Recuperar Contraseña</a></span>
+        </div>
+      </form>
+
+    </div>
+  </div>
+</div>
