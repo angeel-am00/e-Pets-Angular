@@ -10,47 +10,41 @@
 
 <body>
 <header>
-  <nav class="navbar navbar-expand-lg bg-light navbar-light px-lg3 py-lg2 shadow-sm sticky-top">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container-fluid">
-      <a class="navbar-brand me-7 fw-bold fs-3 h-font">
-        <img src="https://i.postimg.cc/MZvrmCym/Screenshot-2-removebg-preview.png" height="55" width="55" alt="">
-      </a>
-      <button class="navbar-toggler shadow-none" type="button" data-bs-toggle="collapse"
-              data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-              aria-expanded="false" aria-label="Toggle navigation">
+      <a class="navbar-brand" href="#"><img src="https://i.postimg.cc/MZvrmCym/Screenshot-2-removebg-preview.png"
+                                            height="55" width="55" alt=""></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link me-2" aria-current="page">
-              <fa-icon [icon]="faHouse"></fa-icon>
-            </a>
+            <a class="nav-link active" aria-current="page" href="#"><fa-icon [icon]="faHouse"></fa-icon></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active me-2" (click)="ruta()">
-              <fa-icon [icon]="faUsers"></fa-icon>
-            </a>
+            <a class="nav-link" (click)="ruta()"><fa-icon [icon]="faUsers"></fa-icon></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link me-2" (click)="ruta2()">
-              <fa-icon [icon]="faShieldDog"></fa-icon>
-            </a>
+            <a class="nav-link" (click)="ruta2()"><fa-icon [icon]="faShieldDog"></fa-icon></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link me-2">
-              <fa-icon [icon]="faComments"></fa-icon>
-            </a>
+            <a class="nav-link"><fa-icon [icon]="faComments"></fa-icon></a>
           </li>
         </ul>
-        <div class="d-flex" role="search">
-          <a>
-            <button type="button" class="btn btn-outline-primary shadow-none me-lg-3 me-2">
-              <fa-icon [icon]="faDoorOpen">
-              </fa-icon>
-            </button>
-          </a>
-        </div>
+        <form class="d-flex">
+          <input class="form-control me-2" type="search" placeholder="Buscar Usuarios" aria-label="Search">
+          <button class="btn btn-outline-success me-lg-5" type="submit"> <fa-icon [icon]="faMagnifyingGlass"></fa-icon></button>
+          <button type="button" class="btn btn-outline-dark shadow-none me-lg-3 me-2">
+            <fa-icon [icon]="faUserPen">
+            </fa-icon>
+          </button>
+          <button type="button" class="btn btn-outline-primary shadow-none me-lg-3 me-2">
+            <fa-icon [icon]="faDoorOpen">
+            </fa-icon>
+          </button>
+        </form>
       </div>
     </div>
   </nav>
@@ -69,13 +63,9 @@
           <hr>
           <div class="bg-c-blue counter-block m-t-10 p-20">
             <div class="row">
-              <div class="col-6">
+              <div class="col-15">
                 <i class="fa fa-file"></i>
                 <p>1256</p>
-              </div>
-              <div class="col-6">
-                <i class="fa fa-user"></i>
-                <p>8562</p>
               </div>
             </div>
           </div>

@@ -186,3 +186,42 @@ body{
   left: 0;
   z-index: 10;
 }
+.carousel-inner img {
+  width: 90%;
+  max-height: 350px;
+}
+
+.carousel-inner {
+  padding: 20px;
+  height: 350px;
+}
+
+.header-text {
+  position: absolute;
+  top: 20%;
+  left: 1.8%;
+  right: auto;
+  width: 96.66666666666666%;
+  color: #000000;
+}
+
+.header-text h2 {
+  font-size: 40px;
+}
+
+.header-text h2 span {
+  padding: 20px;
+}
+.availability-form {
+  margin-top: -50px;
+  z-index: 2;
+  position: relative;
+  margin-left: 300px;
+}
+
+@media screen and (max-width: 575px) {
+  .availability-form {
+    margin-top: 25px;
+    padding: 0 35px;
+  }
+}

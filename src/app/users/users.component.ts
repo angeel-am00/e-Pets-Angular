@@ -4,6 +4,8 @@ import {faComments} from "@fortawesome/free-solid-svg-icons";
 import {faUsers} from "@fortawesome/free-solid-svg-icons";
 import {faShieldDog} from "@fortawesome/free-solid-svg-icons";
 import {faDoorOpen} from "@fortawesome/free-solid-svg-icons";
+import {faUserPen} from "@fortawesome/free-solid-svg-icons";
+import {faMagnifyingGlass} from "@fortawesome/free-solid-svg-icons";
 import {Router} from "@angular/router";
 
 @Component({
@@ -31,4 +33,8 @@ export class UsersComponent {
   faShieldDog = faShieldDog;
 
   faDoorOpen= faDoorOpen;
+
+  faUserPen = faUserPen;
+
+  faMagnifyingGlass= faMagnifyingGlass;
 }
