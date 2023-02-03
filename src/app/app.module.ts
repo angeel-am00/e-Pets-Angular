@@ -14,6 +14,7 @@ import {FontAwesomeModule} from "@fortawesome/angular-fontawesome";
 import { ProtectoraComponent } from './protectora/protectora.component';
 import { PerfilusersComponent } from './perfilusers/perfilusers.component';
 import { PerfilprotectoraComponent } from './perfilprotectora/perfilprotectora.component';
+import { Perfilprotectora2Component } from './perfilprotectora2/perfilprotectora2.component';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import { PerfilprotectoraComponent } from './perfilprotectora/perfilprotectora.c
     UsersComponent,
     ProtectoraComponent,
     PerfilusersComponent,
-    PerfilprotectoraComponent
+    PerfilprotectoraComponent,
+    Perfilprotectora2Component
   ],
   imports: [
     BrowserModule,
@@ -39,6 +41,7 @@ import { PerfilprotectoraComponent } from './perfilprotectora/perfilprotectora.c
       {path: 'protectora', component: ProtectoraComponent},
       {path: 'perfilusers', component: PerfilusersComponent},
       {path: 'perfilprotectora', component: PerfilprotectoraComponent},
+      {path: 'perfilprotectora2', component: Perfilprotectora2Component},
     ]),
     NgbModule,
     FontAwesomeModule,
