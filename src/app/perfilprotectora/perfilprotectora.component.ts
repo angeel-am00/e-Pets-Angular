@@ -9,12 +9,11 @@ import {faMagnifyingGlass} from "@fortawesome/free-solid-svg-icons";
 import {Router} from "@angular/router";
 
 @Component({
-  selector: 'app-users',
-  templateUrl: './users.component.html',
-  styleUrls: ['./users.component.css']
+  selector: 'app-perfilprotectora',
+  templateUrl: './perfilprotectora.component.html',
+  styleUrls: ['./perfilprotectora.component.css']
 })
-export class UsersComponent {
-
+export class PerfilprotectoraComponent {
   constructor(private router:Router) {
   }
 
@@ -25,7 +24,7 @@ export class UsersComponent {
     this.router.navigate(["protectora"])
   }
   ruta3(){
-    this.router.navigate(["perfilusers"])
+    this.router.navigate(["perfilprotectora2"])
   }
   faHouse = faHouse;
   faComments = faComments;
@@ -37,6 +36,5 @@ export class UsersComponent {
   faDoorOpen= faDoorOpen;
 
   faUserPen = faUserPen;
-
   faMagnifyingGlass= faMagnifyingGlass;
 }
