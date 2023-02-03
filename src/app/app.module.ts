@@ -12,6 +12,7 @@ import { PrincipalComponent } from './principal/principal.component';
 import { UsersComponent } from './users/users.component';
 import {FontAwesomeModule} from "@fortawesome/angular-fontawesome";
 import { ProtectoraComponent } from './protectora/protectora.component';
+import { PerfilusersComponent } from './perfilusers/perfilusers.component';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { ProtectoraComponent } from './protectora/protectora.component';
     RegistroComponent,
     PrincipalComponent,
     UsersComponent,
-    ProtectoraComponent
+    ProtectoraComponent,
+    PerfilusersComponent
   ],
   imports: [
     BrowserModule,
@@ -33,6 +35,7 @@ import { ProtectoraComponent } from './protectora/protectora.component';
       {path: 'home', component: PrincipalComponent},
       {path: 'users', component: UsersComponent},
       {path: 'protectora', component: ProtectoraComponent},
+      {path: 'perfilusers', component: PerfilusersComponent}
     ]),
     NgbModule,
     FontAwesomeModule,
