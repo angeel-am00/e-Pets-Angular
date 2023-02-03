@@ -23,6 +23,9 @@ export class ProtectoraComponent {
   ruta2(){
     this.router.navigate(["protectora"])
   }
+  ruta3(){
+    this.router.navigate(["perfilprotectora"])
+  }
 
   faHouse = faHouse;
   faComments = faComments;

@@ -79,14 +79,27 @@
     <div class="ui-bg-overlay bg-dark opacity-25"></div>
     <ul class="nav nav-tabs tabs-alt justify-content-center border-transparent">
       <li class="nav-item">
-        <a class="nav-link text-white py-4 active">Publicaciones</a>
+        <a class="nav-link text-white py-4" (click)="ruta3()">Publicaciones</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link text-white py-4" (click)="ruta3()">Animales</a>
+        <a class="nav-link text-white py-4 active">Animales</a>
       </li>
     </ul>
   </div>
 </div>
+
+<div class="container">
+  <div class="row height d-flex justify-content-center align-items-center">
+    <div class="col-md-5">
+      <div class="search"><i class="fa fa-search"></i>
+        <input type="text" class="form-control" placeholder="¿Qué animal quieres bucar?">
+        <button class="btn btn-primary">Search</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
 <section class="rooms-details p-0">
   <div class="container">
     <div class="row mt-4">

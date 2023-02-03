@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {Router} from "@angular/router";
 import {faHouse} from "@fortawesome/free-solid-svg-icons";
 import {faComments} from "@fortawesome/free-solid-svg-icons";
 import {faUsers} from "@fortawesome/free-solid-svg-icons";
@@ -6,14 +7,12 @@ import {faShieldDog} from "@fortawesome/free-solid-svg-icons";
 import {faDoorOpen} from "@fortawesome/free-solid-svg-icons";
 import {faUserPen} from "@fortawesome/free-solid-svg-icons";
 import {faMagnifyingGlass} from "@fortawesome/free-solid-svg-icons";
-import {Router} from "@angular/router";
-
 @Component({
-  selector: 'app-principal',
-  templateUrl: './principal.component.html',
-  styleUrls: ['./principal.component.css']
+  selector: 'app-perfilprotectora2',
+  templateUrl: './perfilprotectora2.component.html',
+  styleUrls: ['./perfilprotectora2.component.css']
 })
-export class PrincipalComponent {
+export class Perfilprotectora2Component {
 
   constructor(private router:Router) {
   }
@@ -23,6 +22,9 @@ export class PrincipalComponent {
   }
   ruta2(){
     this.router.navigate(["protectora"])
+  }
+  ruta3(){
+    this.router.navigate(["perfilprotectora"])
   }
 
   faHouse = faHouse;
@@ -36,5 +38,4 @@ export class PrincipalComponent {
 
   faUserPen = faUserPen;
   faMagnifyingGlass= faMagnifyingGlass;
-
 }
