@@ -7,10 +7,11 @@ import {HttpClient} from "@angular/common/http";
 export class UsersService {
 
   constructor(private http: HttpClient) {
+    let headers
     console.log('Servicio HTTP:');
   }
 
   getUsers(): any{
-    return this.http.get('https://jsonplaceholder.typicode.com/users');
+    return this.http.get('http://127.0.0.1:8000/api/usuario/list' );
   }
 }
