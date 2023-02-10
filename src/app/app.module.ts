@@ -16,6 +16,8 @@ import { ProtectoraComponent } from './protectora/protectora.component';
 import { PerfilusersComponent } from './perfilusers/perfilusers.component';
 import { PerfilprotectoraComponent } from './perfilprotectora/perfilprotectora.component';
 import { Perfilprotectora2Component } from './perfilprotectora2/perfilprotectora2.component';
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+
 
 
 @NgModule({
@@ -47,6 +49,8 @@ import { Perfilprotectora2Component } from './perfilprotectora2/perfilprotectora
     ]),
     NgbModule,
     FontAwesomeModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

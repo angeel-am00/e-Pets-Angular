@@ -7,8 +7,7 @@ import {HttpClient} from "@angular/common/http";
 export class UsersService {
 
   constructor(private http: HttpClient) {
-    let headers
-    console.log('Servicio HTTP:');
+
   }
 
   getUsers(): any{
