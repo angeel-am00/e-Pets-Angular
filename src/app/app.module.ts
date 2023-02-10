@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import {HttpClientModule} from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -32,6 +33,7 @@ import { Perfilprotectora2Component } from './perfilprotectora2/perfilprotectora
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     RouterModule.forRoot([
       {path: 'login', component: LoginComponent},
       {path: 'registro', component: RegistroComponent},
