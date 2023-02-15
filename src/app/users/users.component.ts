@@ -9,6 +9,7 @@ import {faMagnifyingGlass} from "@fortawesome/free-solid-svg-icons";
 import {Router} from "@angular/router";
 import {UsersService} from "../services/users.service";
 
+
 @Component({
   selector: 'app-users',
   templateUrl: './users.component.html',
@@ -16,6 +17,7 @@ import {UsersService} from "../services/users.service";
 })
 export class UsersComponent implements OnInit{
   userList : any = [];
+
   constructor(private router:Router, private usersService: UsersService) {
   }
 
@@ -27,6 +29,9 @@ export class UsersComponent implements OnInit{
   }
   ruta3(){
     this.router.navigate(["perfilusers"])
+  }
+  ruta4(){
+    this.router.navigate(["home"])
   }
   faHouse = faHouse;
   faComments = faComments;
