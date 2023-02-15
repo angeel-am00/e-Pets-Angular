@@ -16,8 +16,8 @@ body {
 }
 
 #login-submit{
-  background: rgb(29, 155, 240);
-  color:#fff;
+  background: rgba(94, 40, 0, 0.6);
+  color:white;
   font-weight: bold;
   font-size: 15px;
 }
