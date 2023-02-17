@@ -48,4 +48,5 @@ export class ProtectoraComponent implements OnInit {
     this.protectorasService.getProtectoras()
       .subscribe((response: any) => this.protectorasList=response);
   }
+
 }

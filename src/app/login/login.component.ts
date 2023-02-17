@@ -32,7 +32,7 @@ export class LoginComponent implements OnInit{
   }
 
   login(form:any) {
-    console.log(form)
+    console.log(form);
     this.loginService.loginUser(form).subscribe(data=>{
       let dataResponse:ReponseInterface = data;
       if(dataResponse.token){
