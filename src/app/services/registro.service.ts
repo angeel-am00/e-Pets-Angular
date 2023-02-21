@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from "@angular/common/http";
-import {RegistroInterface} from '../modelos/registro.interface';
-import {ResponseRegistroInterface} from '../modelos/responseRegistro.interface';
+import {RegistroInterface} from '../modelos/RegistroModel/registro.interface';
+import {ResponseRegistroInterface} from '../modelos/RegistroModel/responseRegistro.interface';
 import {Observable} from 'rxjs'
-import {ReponseInterface} from "../modelos/reponse.interface";
+import {ReponseInterface} from "../modelos/LoginModel/reponse.interface";
 
 
 

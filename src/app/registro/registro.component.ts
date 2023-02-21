@@ -1,9 +1,9 @@
 import {Component, OnInit} from '@angular/core';
 import {Router} from "@angular/router";
 import {RegistroService} from "../services/registro.service";
-import {ResponseRegistroInterface} from '../modelos/responseRegistro.interface';
+import {ResponseRegistroInterface} from '../modelos/RegistroModel/responseRegistro.interface';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
-import {ReponseInterface} from "../modelos/reponse.interface";
+import {ReponseInterface} from "../modelos/LoginModel/reponse.interface";
 
 @Component({
   selector: 'app-registro',
@@ -26,6 +26,9 @@ export class RegistroComponent implements OnInit{
   constructor(private router:Router, private RegistroService:RegistroService) {
   }
 
+  errorStatus:boolean = false;
+  errorMsg:any = "";
+
   ruta(){
     this.router.navigate(["login"])
   }
@@ -40,6 +43,10 @@ export class RegistroComponent implements OnInit{
       if(dataResponse.message){
         console.log(dataResponse.message);
         this.router.navigate(['login']);
+      }else {
+        this.errorStatus = true;
+        this.errorMsg = dataResponse.message;
+        this.router.navigate(['registro']);
       }
     });
   }
