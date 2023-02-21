@@ -11,6 +11,6 @@ export class PublicacionesService {
   }
 
   getPublicaciones(): any{
-    return this.http.get('http://127.0.0.1:8000/api/publicacion/list' );
+    return this.http.get('http://127.0.0.1:8000/api/publicaciones/list' );
   }
 }
