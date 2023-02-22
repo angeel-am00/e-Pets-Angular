@@ -2,8 +2,8 @@ import {Component, OnInit} from '@angular/core';
 import {Router} from "@angular/router";
 import {NgForm, FormGroup, FormControl, Validators} from "@angular/forms";
 import {LoginService} from "../services/login.service";
-import {LoginInterface} from '../modelos/login.interface';
-import {ReponseInterface} from '../modelos/reponse.interface';
+import {LoginInterface} from '../modelos/LoginModel/login.interface';
+import {ReponseInterface} from '../modelos/LoginModel/reponse.interface';
 
 
 @Component({
@@ -32,7 +32,7 @@ export class LoginComponent implements OnInit{
   }
 
   login(form:any) {
-    console.log(form)
+    console.log(form);
     this.loginService.loginUser(form).subscribe(data=>{
       let dataResponse:ReponseInterface = data;
       if(dataResponse.token){

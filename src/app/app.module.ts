@@ -17,6 +17,7 @@ import { PerfilusersComponent } from './perfilusers/perfilusers.component';
 import { PerfilprotectoraComponent } from './perfilprotectora/perfilprotectora.component';
 import { Perfilprotectora2Component } from './perfilprotectora2/perfilprotectora2.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import { MiperfilComponent } from './miperfil/miperfil.component';
 
 
 
@@ -31,7 +32,8 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
     ProtectoraComponent,
     PerfilusersComponent,
     PerfilprotectoraComponent,
-    Perfilprotectora2Component
+    Perfilprotectora2Component,
+    MiperfilComponent
   ],
   imports: [
     BrowserModule,
@@ -46,6 +48,7 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
       {path: 'perfilusers', component: PerfilusersComponent},
       {path: 'perfilprotectora', component: PerfilprotectoraComponent},
       {path: 'perfilprotectora2', component: Perfilprotectora2Component},
+      {path: 'miperfil', component: MiperfilComponent}
     ]),
     NgbModule,
     FontAwesomeModule,
