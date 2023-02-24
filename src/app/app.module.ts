@@ -18,6 +18,7 @@ import { PerfilprotectoraComponent } from './perfilprotectora/perfilprotectora.c
 import { Perfilprotectora2Component } from './perfilprotectora2/perfilprotectora2.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { MiperfilComponent } from './miperfil/miperfil.component';
+import { MiperfileditarComponent } from './miperfileditar/miperfileditar.component';
 
 
 
@@ -33,7 +34,8 @@ import { MiperfilComponent } from './miperfil/miperfil.component';
     PerfilusersComponent,
     PerfilprotectoraComponent,
     Perfilprotectora2Component,
-    MiperfilComponent
+    MiperfilComponent,
+    MiperfileditarComponent
   ],
   imports: [
     BrowserModule,
