@@ -19,6 +19,8 @@ import { Perfilprotectora2Component } from './perfilprotectora2/perfilprotectora
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { MiperfilComponent } from './miperfil/miperfil.component';
 import { MiperfileditarComponent } from './miperfileditar/miperfileditar.component';
+import { SerprotectoraComponent } from './serprotectora/serprotectora.component';
+import { ComentariopubliComponent } from './comentariopubli/comentariopubli.component';
 
 
 
@@ -35,11 +37,14 @@ import { MiperfileditarComponent } from './miperfileditar/miperfileditar.compone
     PerfilprotectoraComponent,
     Perfilprotectora2Component,
     MiperfilComponent,
-    MiperfileditarComponent
+    MiperfileditarComponent,
+    SerprotectoraComponent,
+    ComentariopubliComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
+    NgbModule,
     RouterModule.forRoot([
       {path: 'login', component: LoginComponent},
       {path: 'registro', component: RegistroComponent},
@@ -50,9 +55,11 @@ import { MiperfileditarComponent } from './miperfileditar/miperfileditar.compone
       {path: 'perfilusers', component: PerfilusersComponent},
       {path: 'perfilprotectora', component: PerfilprotectoraComponent},
       {path: 'perfilprotectora2', component: Perfilprotectora2Component},
-      {path: 'miperfil', component: MiperfilComponent}
+      {path: 'editarperfil', component: MiperfileditarComponent},
+      {path: 'miperfil', component: MiperfilComponent},
+      {path: 'serprotectora', component: SerprotectoraComponent},
+      {path: 'publicacion', component: ComentariopubliComponent},
     ]),
-    NgbModule,
     FontAwesomeModule,
     FormsModule,
     ReactiveFormsModule
