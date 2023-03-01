@@ -32,6 +32,9 @@ export class PrincipalComponent implements OnInit{
   ruta4(){
     this.router.navigate(["home"])
   }
+  logout(){
+    this.router.navigate(['logout'])
+  }
   ngOnInit(): void {
     console.log('El componente se ha inicializado');
     this.publicacionesService.getPublicaciones()

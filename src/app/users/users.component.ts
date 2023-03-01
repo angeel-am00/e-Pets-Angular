@@ -6,8 +6,9 @@ import {faShieldDog} from "@fortawesome/free-solid-svg-icons";
 import {faDoorOpen} from "@fortawesome/free-solid-svg-icons";
 import {faUserPen} from "@fortawesome/free-solid-svg-icons";
 import {faMagnifyingGlass} from "@fortawesome/free-solid-svg-icons";
-import {Router} from "@angular/router";
+import {ActivatedRoute,Router} from "@angular/router";
 import {UsersService} from "../services/users.service";
+import {listausuarios} from "../modelos/listausuarios.interface";
 
 
 @Component({
@@ -18,7 +19,13 @@ import {UsersService} from "../services/users.service";
 export class UsersComponent implements OnInit{
   userList : any = [];
 
-  constructor(private router:Router, private usersService: UsersService) {
+  userListBuscados: any =[];
+ termino=''
+
+
+
+
+  constructor(private router:Router,private activerouter: ActivatedRoute, private usersService: UsersService) {
   }
 
   ruta(){
@@ -46,9 +53,42 @@ export class UsersComponent implements OnInit{
 
   faMagnifyingGlass= faMagnifyingGlass;
 
+  busqueda = this.termino;
+  public usuarioBuscado:any;
   ngOnInit(): void {
-    console.log('El componente se ha inicializado');
+
     this.usersService.getUsers()
       .subscribe((response: any) => this.userList=response);
+    this.guardarBusqueda()
+
+
+
   }
+
+  perfilUsuario(id: any){
+    console.log(id);
+    this.router.navigate(['perfilusers', id])
+  }
+  guardarBusqueda(){
+
+
+    localStorage.setItem('busqueda', this.termino)
+    this.usuarioBuscado = localStorage.getItem('busqueda')
+
+    this.usersService.buscarUser(this.usuarioBuscado)
+      .subscribe(resp =>{this.userListBuscados =resp; console.log(resp)}  );
+    const buscados:any = document.getElementById('buscados');
+    const todos:any = document.getElementById('todos');
+    buscados.style.display = 'block';
+    todos.style.display = 'none';
+
+
+  }
+
+  refresh(){
+    location.reload()
+  }
+
+
+
 }

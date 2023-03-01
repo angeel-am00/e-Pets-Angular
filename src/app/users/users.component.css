@@ -186,3 +186,11 @@ body{
   left: 0;
   z-index: 10;
 }
+
+#todos{
+  display: block;
+}
+
+#buscados{
+  display: none;
+}

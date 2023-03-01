@@ -17,6 +17,7 @@ import { PerfilusersComponent } from './perfilusers/perfilusers.component';
 import { PerfilprotectoraComponent } from './perfilprotectora/perfilprotectora.component';
 import { Perfilprotectora2Component } from './perfilprotectora2/perfilprotectora2.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import { LogoutComponent } from './logout/logout.component';
 
 
 
@@ -31,7 +32,8 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
     ProtectoraComponent,
     PerfilusersComponent,
     PerfilprotectoraComponent,
-    Perfilprotectora2Component
+    Perfilprotectora2Component,
+    LogoutComponent
   ],
   imports: [
     BrowserModule,
@@ -43,9 +45,10 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
       {path: 'home', component: PrincipalComponent},
       {path: 'users', component: UsersComponent},
       {path: 'protectora', component: ProtectoraComponent},
-      {path: 'perfilusers', component: PerfilusersComponent},
+      {path: 'perfilusers/:id', component: PerfilusersComponent},
       {path: 'perfilprotectora', component: PerfilprotectoraComponent},
       {path: 'perfilprotectora2', component: Perfilprotectora2Component},
+      {path: 'logout', component: LogoutComponent},
     ]),
     NgbModule,
     FontAwesomeModule,
