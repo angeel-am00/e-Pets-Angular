@@ -6,32 +6,43 @@ import {faShieldDog} from "@fortawesome/free-solid-svg-icons";
 import {faDoorOpen} from "@fortawesome/free-solid-svg-icons";
 import {faUserPen} from "@fortawesome/free-solid-svg-icons";
 import {faMagnifyingGlass} from "@fortawesome/free-solid-svg-icons";
+import {faCheck} from "@fortawesome/free-solid-svg-icons";
+import {faTimes} from "@fortawesome/free-solid-svg-icons";
 import {Router} from "@angular/router";
+import {faPencil} from "@fortawesome/free-solid-svg-icons";
+import {faArrowLeft} from "@fortawesome/free-solid-svg-icons";
+
+import {NgbAccordionConfig} from "@ng-bootstrap/ng-bootstrap";
 
 @Component({
-  selector: 'app-perfilusers',
-  templateUrl: './perfilusers.component.html',
-  styleUrls: ['./perfilusers.component.css']
+  selector: 'app-miperfil',
+  templateUrl: './miperfil.component.html',
+  styleUrls: ['./miperfil.component.css']
 })
-export class PerfilusersComponent {
-  constructor(private router:Router) {
+export class MiperfilComponent {
+
+  constructor(private router:Router,private _confing:NgbAccordionConfig) {
   }
 
-  ruta(){
+  user(){
     this.router.navigate(["users"])
   }
-  ruta2(){
+  protectora(){
     this.router.navigate(["protectora"])
   }
-  ruta3(){
-    this.router.navigate(["perfilusers"])
-  }
-  ruta4(){
+  home(){
     this.router.navigate(["home"])
   }
 
-  ruta5(){
+  miperfil(){
     this.router.navigate(["miperfil"])
+  }
+  serprotectora(){
+    this.router.navigate(["serprotectora"])
+  }
+
+  ruta6(){
+    this.router.navigate(["editarperfil"])
   }
 
   faHouse = faHouse;
@@ -45,5 +56,13 @@ export class PerfilusersComponent {
 
   faUserPen = faUserPen;
   faMagnifyingGlass= faMagnifyingGlass;
+
+  faCheck=faCheck;
+
+ faTimes = faTimes;
+
+  faPenSquare=faPencil;
+
+  faArrowLeft = faArrowLeft
 
 }

@@ -1,0 +1,124 @@
+<html>
+<head>
+  <link rel='stylesheet prefetch'
+        href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap.min.css'>
+  <link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'>
+  <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/octicons/4.4.0/font/octicons.min.css'>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+
+</head>
+
+<body>
+<header>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" (click)="home()"><img
+        src="https://i.postimg.cc/MZvrmCym/Screenshot-2-removebg-preview.png"
+        height="55" width="55" alt=""></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" (click)="home()">
+              <fa-icon [icon]="faHouse"></fa-icon>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" (click)="user()">
+              <fa-icon [icon]="faUsers"></fa-icon>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" (click)="protectora()">
+              <fa-icon [icon]="faShieldDog"></fa-icon>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link">
+              <fa-icon [icon]="faComments"></fa-icon>
+            </a>
+          </li>
+        </ul>
+        <form class="d-flex">
+          <button type="button" class="btn btn-outline-dark shadow-none me-lg-3 me-2" (click)="miperfil()">
+            <fa-icon [icon]="faUserPen">
+            </fa-icon>
+          </button>
+          <button type="button" class="btn btn-outline-primary shadow-none me-lg-3 me-2">
+            <fa-icon [icon]="faDoorOpen">
+            </fa-icon>
+          </button>
+        </form>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<div class="container">
+  <div class="main-body">
+
+
+    <div class="row gutters-sm" style="margin-top: 100px">
+      <div class="col-md-8" style="margin-left: 220px">
+
+        <div class="card mb-3">
+          <div class="card-body">
+            <div class="row">
+              <div class="col-sm-12">
+                <h3 class="mb-0" style="margin-left: 280px">Ser Protectora</h3>
+              </div>
+            </div>
+            <br>
+            <div class="row">
+              <div class="col-sm-3">
+                <h6 class="mb-0">Dirreción</h6>
+              </div>
+              <div class="col-sm-9 text-secondary">
+                <input type="text" class="form-control" value="john@example.com">
+              </div>
+            </div>
+            <hr>
+            <div class="row">
+              <div class="col-sm-3">
+                  <h6 class="mb-0">Capacidad</h6>
+              </div>
+              <div class="col-sm-9 text-secondary">
+                <input type="text" class="form-control" value="John Doe">
+              </div>
+            </div>
+            <hr>
+            <div class="row">
+              <div class="col-sm-3">
+                <h6 class="mb-0">Logo de la protectora</h6>
+              </div>
+              <div class="col-sm-9 text-secondary">
+                <input type="text" class="form-control" value="John Doe">
+              </div>
+            </div>
+            <hr>
+            <div class="row">
+              <div class="col-sm-12 text-secondary">
+                <button type="submit" class="btn btn-outline-success px-4"> Guardar Datos
+                  <fa-icon [icon]="faCheck">
+                  </fa-icon>
+                </button>
+                <button style="margin-left: 12px" type="submit" class="btn btn-outline-danger px-4" (click)="miperfil()">
+                  <fa-icon [icon]="faArrowLeft">
+                  </fa-icon> Volver
+                </button>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<br><br><br>
+</body>
+</html>
