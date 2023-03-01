@@ -21,6 +21,7 @@ import { MiperfilComponent } from './miperfil/miperfil.component';
 import { MiperfileditarComponent } from './miperfileditar/miperfileditar.component';
 import { SerprotectoraComponent } from './serprotectora/serprotectora.component';
 import { ComentariopubliComponent } from './comentariopubli/comentariopubli.component';
+import { CrearPublicacionesComponent } from './crear-publicaciones/crear-publicaciones.component';
 
 
 
@@ -39,7 +40,8 @@ import { ComentariopubliComponent } from './comentariopubli/comentariopubli.comp
     MiperfilComponent,
     MiperfileditarComponent,
     SerprotectoraComponent,
-    ComentariopubliComponent
+    ComentariopubliComponent,
+    CrearPublicacionesComponent
   ],
   imports: [
     BrowserModule,
@@ -59,6 +61,7 @@ import { ComentariopubliComponent } from './comentariopubli/comentariopubli.comp
       {path: 'miperfil', component: MiperfilComponent},
       {path: 'serprotectora', component: SerprotectoraComponent},
       {path: 'publicacion', component: ComentariopubliComponent},
+      {path: 'crearPub', component: CrearPublicacionesComponent},
     ]),
     FontAwesomeModule,
     FormsModule,
