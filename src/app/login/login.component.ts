@@ -29,6 +29,7 @@ export class LoginComponent implements OnInit{
   }
 
   ngOnInit() {
+    this.checkLocalStorage();
   }
 
   login(form:any) {
@@ -45,5 +46,11 @@ export class LoginComponent implements OnInit{
 
     });
   }
+  checkLocalStorage(){
+    if(localStorage.getItem('token')){
+      this.router.navigate(['home'])
+    }
+  }
+
 }
 

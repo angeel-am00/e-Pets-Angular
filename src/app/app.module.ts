@@ -21,6 +21,7 @@ import { MiperfileditarComponent } from './miperfileditar/miperfileditar.compone
 import { SerprotectoraComponent } from './serprotectora/serprotectora.component';
 import { ComentariopubliComponent } from './comentariopubli/comentariopubli.component';
 import { CrearPublicacionesComponent } from './crear-publicaciones/crear-publicaciones.component';
+import { LogoutComponent } from './logout/logout.component';
 
 
 
@@ -39,7 +40,9 @@ import { CrearPublicacionesComponent } from './crear-publicaciones/crear-publica
     MiperfileditarComponent,
     SerprotectoraComponent,
     ComentariopubliComponent,
-    CrearPublicacionesComponent
+    CrearPublicacionesComponent,
+    Perfilprotectora2Component,
+
   ],
   imports: [
     BrowserModule,
@@ -52,13 +55,15 @@ import { CrearPublicacionesComponent } from './crear-publicaciones/crear-publica
       {path: 'home', component: PrincipalComponent},
       {path: 'users', component: UsersComponent},
       {path: 'protectora', component: ProtectoraComponent},
-      {path: 'perfilusers', component: PerfilusersComponent},
+      {path: 'perfilusers/:id', component: PerfilusersComponent},
       {path: 'perfilprotectora', component: PerfilprotectoraComponent},
       {path: 'editarperfil', component: MiperfileditarComponent},
       {path: 'miperfil', component: MiperfilComponent},
       {path: 'serprotectora', component: SerprotectoraComponent},
       {path: 'publicacion', component: ComentariopubliComponent},
       {path: 'crearPub', component: CrearPublicacionesComponent},
+      {path: 'perfilprotectora2', component: Perfilprotectora2Component},
+      {path: 'logout', component: LogoutComponent},
     ]),
     FontAwesomeModule,
     FormsModule,

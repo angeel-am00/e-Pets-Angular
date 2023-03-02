@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {faHouse} from "@fortawesome/free-solid-svg-icons";
 import {faComments} from "@fortawesome/free-solid-svg-icons";
 import {faUsers} from "@fortawesome/free-solid-svg-icons";
@@ -6,17 +6,30 @@ import {faShieldDog} from "@fortawesome/free-solid-svg-icons";
 import {faDoorOpen} from "@fortawesome/free-solid-svg-icons";
 import {faUserPen} from "@fortawesome/free-solid-svg-icons";
 import {faMagnifyingGlass} from "@fortawesome/free-solid-svg-icons";
-import {Router} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
+import {listausuarios} from "../modelos/listausuarios.interface";
+import {UsersService} from "../services/users.service";
+import {FormGroup, FormControl, Validators} from "@angular/forms";
+import {Observable} from "rxjs";
 
 @Component({
   selector: 'app-perfilusers',
   templateUrl: './perfilusers.component.html',
   styleUrls: ['./perfilusers.component.css']
 })
-export class PerfilusersComponent {
-  constructor(private router:Router) {
-  }
+export class PerfilusersComponent implements OnInit{
 
+
+  constructor(private router:Router, private activerouter: ActivatedRoute, private usersService : UsersService) {
+  }
+  datosUser :any;
+  datosUserFor = new FormGroup({
+    username: new FormControl(''),
+    nombre: new FormControl(''),
+    apellidos: new FormControl(''),
+    telefono: new FormControl(''),
+    email: new FormControl(''),
+  })
   ruta(){
     this.router.navigate(["users"])
   }
@@ -45,5 +58,30 @@ export class PerfilusersComponent {
 
   faUserPen = faUserPen;
   faMagnifyingGlass= faMagnifyingGlass;
+
+  public perfilUserId:any;
+  ngOnInit(): void {
+    this.perfilUserId = this.activerouter.snapshot.paramMap.get('id');
+    let token = this.getToken();
+    this.obtenerDatos()
+    // console.log(perfilUserId);
+    //this.usersService.getSingleUser(perfilUserId).subscribe((response :any)=> this.datosUser=response);
+  }
+  getToken(){
+    return localStorage.getItem('token');
+
+  }
+
+
+  obtenerDatos(){
+    this.usersService.getSingleUser(this.perfilUserId)
+      .subscribe(resp => {
+        this.datosUser = resp;
+        console.log(this.datosUser)
+      })
+  }
+
+
+
 
 }
