@@ -15,8 +15,12 @@ import {FontAwesomeModule} from "@fortawesome/angular-fontawesome";
 import { ProtectoraComponent } from './protectora/protectora.component';
 import { PerfilusersComponent } from './perfilusers/perfilusers.component';
 import { PerfilprotectoraComponent } from './perfilprotectora/perfilprotectora.component';
-import { Perfilprotectora2Component } from './perfilprotectora2/perfilprotectora2.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import { MiperfilComponent } from './miperfil/miperfil.component';
+import { MiperfileditarComponent } from './miperfileditar/miperfileditar.component';
+import { SerprotectoraComponent } from './serprotectora/serprotectora.component';
+import { ComentariopubliComponent } from './comentariopubli/comentariopubli.component';
+import { CrearPublicacionesComponent } from './crear-publicaciones/crear-publicaciones.component';
 import { LogoutComponent } from './logout/logout.component';
 
 
@@ -32,12 +36,16 @@ import { LogoutComponent } from './logout/logout.component';
     ProtectoraComponent,
     PerfilusersComponent,
     PerfilprotectoraComponent,
-    Perfilprotectora2Component,
-
+    MiperfilComponent,
+    MiperfileditarComponent,
+    SerprotectoraComponent,
+    ComentariopubliComponent,
+    CrearPublicacionesComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
+    NgbModule,
     RouterModule.forRoot([
       {path: 'login', component: LoginComponent},
       {path: 'registro', component: RegistroComponent},
@@ -47,10 +55,13 @@ import { LogoutComponent } from './logout/logout.component';
       {path: 'protectora', component: ProtectoraComponent},
       {path: 'perfilusers/:id', component: PerfilusersComponent},
       {path: 'perfilprotectora', component: PerfilprotectoraComponent},
-      {path: 'perfilprotectora2', component: Perfilprotectora2Component},
+      {path: 'editarperfil', component: MiperfileditarComponent},
+      {path: 'miperfil', component: MiperfilComponent},
+      {path: 'serprotectora', component: SerprotectoraComponent},
+      {path: 'publicacion', component: ComentariopubliComponent},
+      {path: 'crearPub', component: CrearPublicacionesComponent},
       {path: 'logout', component: LogoutComponent},
     ]),
-    NgbModule,
     FontAwesomeModule,
     FormsModule,
     ReactiveFormsModule

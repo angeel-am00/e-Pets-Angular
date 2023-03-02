@@ -36,6 +36,16 @@ export class PerfilusersComponent implements OnInit{
   ruta2(){
     this.router.navigate(["protectora"])
   }
+  ruta3(){
+    this.router.navigate(["perfilusers"])
+  }
+  ruta4(){
+    this.router.navigate(["home"])
+  }
+
+  ruta5(){
+    this.router.navigate(["miperfil"])
+  }
 
   faHouse = faHouse;
   faComments = faComments;

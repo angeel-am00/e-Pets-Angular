@@ -7,7 +7,12 @@ import {faShieldDog} from "@fortawesome/free-solid-svg-icons";
 import {faDoorOpen} from "@fortawesome/free-solid-svg-icons";
 import {faUserPen} from "@fortawesome/free-solid-svg-icons";
 import {faMagnifyingGlass} from "@fortawesome/free-solid-svg-icons";
+import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {PublicacionesService} from "../services/publicaciones.service";
+import {ResponseSavePubliInterface} from "../modelos/SavePubliModel/responseSavePubli.interface";
+import {ResponseLikesInterface} from "../modelos/LikesModel/responseLikes.interface";
+import {auto} from "@popperjs/core";
+
 
 @Component({
   selector: 'app-principal',
@@ -17,6 +22,7 @@ import {PublicacionesService} from "../services/publicaciones.service";
 export class PrincipalComponent implements OnInit{
 
   publicacionesList: any = [];
+
   constructor(private router:Router, private publicacionesService: PublicacionesService) {
   }
 
@@ -40,6 +46,19 @@ export class PrincipalComponent implements OnInit{
     this.publicacionesService.getPublicaciones()
       .subscribe((response :any)=> this.publicacionesList=response);
   }
+
+  likes(idPub:any){
+    this.publicacionesService.sumLikes(idPub).subscribe(data => {
+      let dataResponse : ResponseLikesInterface = data;
+      if(dataResponse.error){
+        console.log(dataResponse.error);
+      }else {
+        console.log(dataResponse.message)
+        window.location.reload();
+      }
+    });
+  }
+
 
   faHouse = faHouse;
   faComments = faComments;

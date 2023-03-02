@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from "@angular/common/http";
-import {LoginInterface} from '../modelos/login.interface';
-import {ReponseInterface} from '../modelos/reponse.interface';
+import {LoginInterface} from '../modelos/LoginModel/login.interface';
+import {ReponseInterface} from '../modelos/LoginModel/reponse.interface';
 import {Observable} from 'rxjs'
 
 
