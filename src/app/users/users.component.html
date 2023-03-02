@@ -34,7 +34,7 @@
           </li>
         </ul>
         <form class="d-flex">
-          <input class="form-control me-2" type="search" placeholder="Buscar Usuarios" aria-label="Search" [(ngModel)]="termino" [ngModelOptions]="{standalone: true}" >
+          <input class="form-control me-2" type="search" placeholder="Buscar Usuarios" aria-label="Search" [(ngModel)]="termino" name="termino" >
           <button (click)="guardarBusqueda()" class="btn btn-outline-success me-lg-5" type="submit"> <fa-icon [icon]="faMagnifyingGlass"></fa-icon></button>
           <button type="button" class="btn btn-outline-dark shadow-none me-lg-3 me-2">
             <fa-icon [icon]="faUserPen">
@@ -50,7 +50,7 @@
   </nav>
 </header>
 
-<div id="buscados"  class="container">
+<div id="todos"  class="container">
   <div class="row">
     <div *ngFor="let user of userList" class="col-md-4">
       <div class="card user-card">
@@ -71,7 +71,7 @@
     </div>
   </div>
 </div>
-<div id="todos" class="container">
+<div id="buscados" class="container">
   <div class="row">
     <div *ngFor="let user of userListBuscados" class="col-md-4">
       <div class="card user-card">

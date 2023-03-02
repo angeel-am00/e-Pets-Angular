@@ -33,7 +33,7 @@ import { LogoutComponent } from './logout/logout.component';
     PerfilusersComponent,
     PerfilprotectoraComponent,
     Perfilprotectora2Component,
-    LogoutComponent
+
   ],
   imports: [
     BrowserModule,

@@ -59,7 +59,6 @@ export class UsersComponent implements OnInit{
 
     this.usersService.getUsers()
       .subscribe((response: any) => this.userList=response);
-    this.guardarBusqueda()
 
 
 
