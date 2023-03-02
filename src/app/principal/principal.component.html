@@ -13,8 +13,9 @@
 <header>
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container-fluid">
-      <a class="navbar-brand" (click)="ruta4()"><img src="https://i.postimg.cc/MZvrmCym/Screenshot-2-removebg-preview.png"
-                                   height="55" width="55" alt=""></a>
+      <a class="navbar-brand" (click)="ruta4()"><img
+        src="https://i.postimg.cc/MZvrmCym/Screenshot-2-removebg-preview.png"
+        height="55" width="55" alt=""></a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
               aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -79,7 +80,8 @@
               <span class="tweet-time"> {{publicaciones.fechaPu}}</span>
             </div>
             <a>
-              <img class="tweet-card-avatar" src="https://pbs.twimg.com/profile_images/679974972278849537/bzzb-6H4_bigger.jpg" alt="">
+              <img class="tweet-card-avatar"
+                   src="https://pbs.twimg.com/profile_images/679974972278849537/bzzb-6H4_bigger.jpg" alt="">
             </a>
             <div class="tweet-text">
               <p class="" lang="es" data-aria-label-part="0">{{publicaciones.cuerpo}}
@@ -91,7 +93,8 @@
                 <i class="octicon octicon-comment" aria-hidden="true"></i><span> 18</span>
               </a>
               <a class="tweet-footer-btn">
-                <i class="octicon octicon-heart" aria-hidden="true"></i><span> {{publicaciones.likes}}</span>
+                <button type="submit" style="border: none; background: none" (click)="likes(publicaciones.id)" class="octicon octicon-heart"
+                        id="idPub"> <span> {{publicaciones.likes}}</span> </button>
               </a>
             </div>
           </div>
@@ -109,7 +112,8 @@
           <ol class="tweet-list">
             <li class="tweet-card">
               <div class="tweet-content">
-                <img class="tweet-card-avatar" src="https://pbs.twimg.com/profile_images/679974972278849537/bzzb-6H4_bigger.jpg" alt="">
+                <img class="tweet-card-avatar"
+                     src="https://pbs.twimg.com/profile_images/679974972278849537/bzzb-6H4_bigger.jpg" alt="">
                 <div class="tweet-header">
                     <span class="fullname">
                   <strong>Jon Vadillo</strong>
@@ -122,7 +126,8 @@
             </li>
             <li class="tweet-card">
               <div class="tweet-content">
-                <img class="tweet-card-avatar" src="https://pbs.twimg.com/profile_images/679974972278849537/bzzb-6H4_bigger.jpg" alt="">
+                <img class="tweet-card-avatar"
+                     src="https://pbs.twimg.com/profile_images/679974972278849537/bzzb-6H4_bigger.jpg" alt="">
                 <div class="tweet-header">
                     <span class="fullname">
                   <strong>Jon Vadillo</strong>
@@ -135,7 +140,8 @@
             </li>
             <li class="tweet-card">
               <div class="tweet-content">
-                <img class="tweet-card-avatar" src="https://pbs.twimg.com/profile_images/679974972278849537/bzzb-6H4_bigger.jpg" alt="">
+                <img class="tweet-card-avatar"
+                     src="https://pbs.twimg.com/profile_images/679974972278849537/bzzb-6H4_bigger.jpg" alt="">
                 <div class="tweet-header">
                     <span class="fullname">
                   <strong>Jon Vadillo</strong>

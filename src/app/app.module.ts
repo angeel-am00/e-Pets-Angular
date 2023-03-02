@@ -15,7 +15,6 @@ import {FontAwesomeModule} from "@fortawesome/angular-fontawesome";
 import { ProtectoraComponent } from './protectora/protectora.component';
 import { PerfilusersComponent } from './perfilusers/perfilusers.component';
 import { PerfilprotectoraComponent } from './perfilprotectora/perfilprotectora.component';
-import { Perfilprotectora2Component } from './perfilprotectora2/perfilprotectora2.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { MiperfilComponent } from './miperfil/miperfil.component';
 import { MiperfileditarComponent } from './miperfileditar/miperfileditar.component';
@@ -36,7 +35,6 @@ import { CrearPublicacionesComponent } from './crear-publicaciones/crear-publica
     ProtectoraComponent,
     PerfilusersComponent,
     PerfilprotectoraComponent,
-    Perfilprotectora2Component,
     MiperfilComponent,
     MiperfileditarComponent,
     SerprotectoraComponent,
@@ -56,7 +54,6 @@ import { CrearPublicacionesComponent } from './crear-publicaciones/crear-publica
       {path: 'protectora', component: ProtectoraComponent},
       {path: 'perfilusers', component: PerfilusersComponent},
       {path: 'perfilprotectora', component: PerfilprotectoraComponent},
-      {path: 'perfilprotectora2', component: Perfilprotectora2Component},
       {path: 'editarperfil', component: MiperfileditarComponent},
       {path: 'miperfil', component: MiperfilComponent},
       {path: 'serprotectora', component: SerprotectoraComponent},

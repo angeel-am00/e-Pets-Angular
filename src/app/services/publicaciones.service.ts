@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
-import {HttpClient, HttpHeaders} from "@angular/common/http";
-import {SavePubliInterface} from "../modelos/SavePubliModel/savePubli.interface"
-import {ResponseSavePubliInterface} from "../modelos/SavePubliModel/responseSavePubli.interface"
+import {HttpClient, HttpHeaders, HttpParams} from "@angular/common/http";
+import {SavePubliInterface} from "../modelos/SavePubliModel/savePubli.interface";
+import {ResponseSavePubliInterface} from "../modelos/SavePubliModel/responseSavePubli.interface";
 import {Observable} from "rxjs";
+import {ResponseLikesInterface} from "../modelos/LikesModel/responseLikes.interface";
 import {ReponseInterface} from "../modelos/LoginModel/reponse.interface";
 
 @Injectable({
@@ -29,5 +30,10 @@ export class PublicacionesService {
       'token': token
     })
     return this.http.post<ResponseSavePubliInterface>(direccion, form, {headers:httpHeaders});
+  }
+
+  sumLikes(idPub:any):Observable<ResponseLikesInterface>{
+    let direccion = this.url + "publicaciones/like?idPub=" + idPub;
+    return this.http.put<ResponseSavePubliInterface>(direccion, idPub);
   }
 }
