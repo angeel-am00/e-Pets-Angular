@@ -225,3 +225,12 @@ body{
     padding: 0 35px;
   }
 }
+
+
+#todo{
+  display: block;
+}
+
+#buscado{
+  display: none;
+}

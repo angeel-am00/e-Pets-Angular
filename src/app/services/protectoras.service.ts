@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
-import {listausuarios} from "../modelos/listausuarios.interface";
+import {listausuarios, nuevaLista} from "../modelos/listausuarios.interface";
 
 @Injectable({
   providedIn: 'root'
@@ -17,7 +17,11 @@ export class ProtectorasService {
   }
 
   getSingleProtectora(id:any):Observable<listausuarios>{
-    let direccion = 'http://127.0.0.1:8000/api/usuario/verPerfil' + "?idUser=" +id;
+    let direccion = 'http://127.0.0.1:8000/api/asociacion/verAsociacion' + "?idAsociacion=" +id;
     return this.http.get<listausuarios>(direccion);
+  }
+  buscarProtectora(username:any):Observable<nuevaLista>{
+    let direccion = 'http://127.0.0.1:8000/api/buscador/asociacion' + "?username=" +username;
+    return this.http.get<nuevaLista>(direccion);
   }
 }

@@ -12,6 +12,7 @@ import {PublicacionesService} from "../services/publicaciones.service";
 import {ResponseSavePubliInterface} from "../modelos/SavePubliModel/responseSavePubli.interface";
 import {ResponseLikesInterface} from "../modelos/LikesModel/responseLikes.interface";
 import {auto} from "@popperjs/core";
+import {TagService} from "../services/tag.service";
 
 
 @Component({
@@ -22,8 +23,11 @@ import {auto} from "@popperjs/core";
 export class PrincipalComponent implements OnInit{
 
   publicacionesList: any = [];
+  tagsList: any = [];
 
-  constructor(private router:Router, private publicacionesService: PublicacionesService) {
+  publicacionListBuscados: any =[];
+  termino=''
+  constructor(private router:Router, private publicacionesService: PublicacionesService, private tagService: TagService) {
   }
 
   ruta(){
@@ -41,10 +45,16 @@ export class PrincipalComponent implements OnInit{
   logout(){
     this.router.navigate(['logout'])
   }
+
+  busqueda = this.termino;
+  public publicacionBuscado:any;
   ngOnInit(): void {
     console.log('El componente se ha inicializado');
     this.publicacionesService.getPublicaciones()
       .subscribe((response :any)=> this.publicacionesList=response);
+
+    this.tagService.getTag()
+      .subscribe((response : any)=> this.tagsList=response)
   }
 
   likes(idPub:any){
@@ -59,6 +69,23 @@ export class PrincipalComponent implements OnInit{
     });
   }
 
+  guardarBusqueda(){
+
+    localStorage.setItem('busqueda', this.termino)
+    this.publicacionBuscado = localStorage.getItem('busqueda')
+
+    this.publicacionesService.buscarTags(this.publicacionBuscado)
+      .subscribe(resp =>{this.publicacionListBuscados =resp; console.log(resp)}  );
+    const buscada:any = document.getElementById('buscada');
+    const toda :any = document.getElementById('toda');
+    buscada.style.display = 'block';
+    toda.style.display = 'none';
+
+  }
+
+  refresh(){
+    location.reload()
+  }
 
   faHouse = faHouse;
   faComments = faComments;

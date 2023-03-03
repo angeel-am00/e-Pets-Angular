@@ -5,6 +5,7 @@ import {ResponseSavePubliInterface} from "../modelos/SavePubliModel/responseSave
 import {Observable} from "rxjs";
 import {ResponseLikesInterface} from "../modelos/LikesModel/responseLikes.interface";
 import {ReponseInterface} from "../modelos/LoginModel/reponse.interface";
+import {nuevaLista} from "../modelos/listausuarios.interface";
 
 @Injectable({
   providedIn: 'root'
@@ -35,5 +36,10 @@ export class PublicacionesService {
   sumLikes(idPub:any):Observable<ResponseLikesInterface>{
     let direccion = this.url + "publicaciones/like?idPub=" + idPub;
     return this.http.put<ResponseSavePubliInterface>(direccion, idPub);
+  }
+
+  buscarTags(tag:any):Observable<nuevaLista>{
+    let direccion = 'http://127.0.0.1:8000/api/publicaciones/buscarTag' + "?tag=" +tag;
+    return this.http.get<nuevaLista>(direccion);
   }
 }
