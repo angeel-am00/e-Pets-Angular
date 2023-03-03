@@ -23,13 +23,7 @@ export class PerfilusersComponent implements OnInit{
   constructor(private router:Router, private activerouter: ActivatedRoute, private usersService : UsersService) {
   }
   datosUser :any;
-  datosUserFor = new FormGroup({
-    username: new FormControl(''),
-    nombre: new FormControl(''),
-    apellidos: new FormControl(''),
-    telefono: new FormControl(''),
-    email: new FormControl(''),
-  })
+
   ruta(){
     this.router.navigate(["users"])
   }
@@ -72,6 +66,10 @@ export class PerfilusersComponent implements OnInit{
 
   }
 
+  verPub(id: any){
+    console.log(id);
+    this.router.navigate(['publicacion', id])
+  }
 
   obtenerDatos(){
     this.usersService.getSingleUser(this.perfilUserId)

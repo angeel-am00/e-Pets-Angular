@@ -32,10 +32,10 @@ export class CrearPublicacionesComponent implements OnInit {
       let dataResponse: ResponseSavePubliInterface = data;
       if (dataResponse.prohibido) {
         console.log(dataResponse.prohibido);
-        this.router.navigate(['crearPub']);
+        window.location.reload();
       } else if (dataResponse.error) {
         console.log(dataResponse.error);
-        this.router.navigate(['crearPub']);
+        window.location.reload()
       } else {
         console.log(dataResponse.message);
         this.router.navigate(['home']);

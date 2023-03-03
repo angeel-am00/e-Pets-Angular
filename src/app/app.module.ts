@@ -41,7 +41,6 @@ import { LogoutComponent } from './logout/logout.component';
     SerprotectoraComponent,
     ComentariopubliComponent,
     CrearPublicacionesComponent,
-    Perfilprotectora2Component,
 
   ],
   imports: [
@@ -60,9 +59,8 @@ import { LogoutComponent } from './logout/logout.component';
       {path: 'editarperfil', component: MiperfileditarComponent},
       {path: 'miperfil', component: MiperfilComponent},
       {path: 'serprotectora', component: SerprotectoraComponent},
-      {path: 'publicacion', component: ComentariopubliComponent},
+      {path: 'publicacion/:id', component: ComentariopubliComponent},
       {path: 'crearPub', component: CrearPublicacionesComponent},
-      {path: 'perfilprotectora2', component: Perfilprotectora2Component},
       {path: 'logout', component: LogoutComponent},
     ]),
     FontAwesomeModule,

@@ -68,6 +68,7 @@
       </div>
     </div>
 
+
     <div class="col-6">
       <ol *ngFor="let publicaciones of publicacionesList" class="tweet-list">
         <li class="tweet-card">
@@ -76,25 +77,28 @@
                 <span class="fullname">
                   <strong>{{publicaciones.user.nombre}} {{publicaciones.user.apellidos}}</strong>
                 </span>
-              <span class="username"> @{{publicaciones.user.username}}</span>
-              <span class="tweet-time"> {{publicaciones.fechaPu}}</span>
+                <span class="username"> @{{publicaciones.user.username}}</span>
+                <span class="tweet-time"> {{publicaciones.fechaPu}}</span>
             </div>
             <a>
               <img class="tweet-card-avatar"
                    src="https://pbs.twimg.com/profile_images/679974972278849537/bzzb-6H4_bigger.jpg" alt="">
             </a>
             <div class="tweet-text">
-              <p class="" lang="es" data-aria-label-part="0">{{publicaciones.cuerpo}}
-                <a href="" class="twitter-hashtag" dir="ltr"></a>
-              </p>
+              <a (click)="verPub(publicaciones.id)">
+                <p class="" lang="es" data-aria-label-part="0">{{publicaciones.cuerpo}}
+                  <a href="" class="twitter-hashtag" dir="ltr"></a>
+                </p>
+              </a>
             </div>
             <div class="tweet-footer">
               <a class="tweet-footer-btn">
                 <i class="octicon octicon-comment" aria-hidden="true"></i><span> 18</span>
               </a>
               <a class="tweet-footer-btn">
-                <button type="submit" style="border: none; background: none" (click)="likes(publicaciones.id)" class="octicon octicon-heart"
-                        id="idPub"> <span> {{publicaciones.likes}}</span> </button>
+                <button type="submit" style="border: none; background: none" (click)="likes(publicaciones.id)"
+                        class="octicon octicon-heart"
+                        id="idPub"><span> {{publicaciones.likes}}</span></button>
               </a>
             </div>
           </div>

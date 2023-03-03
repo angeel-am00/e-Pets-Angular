@@ -86,7 +86,7 @@
           <img src="{{datos.imagen}}"
                style="width: auto;height: auto" alt="" class="card-img-top">
           <div class="card-body">
-            <h6 class="text-center fw-bold" style="text-align: center" >{{datos.cuerpo}}</h6>
+            <h6 (click)="verPub(datos.id)" class="text-center fw-bold" style="text-align: center" >{{datos.cuerpo}}</h6>
           </div>
         </div>
       </div>

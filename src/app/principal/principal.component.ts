@@ -47,6 +47,11 @@ export class PrincipalComponent implements OnInit{
       .subscribe((response :any)=> this.publicacionesList=response);
   }
 
+  verPub(id: any){
+    console.log(id);
+    this.router.navigate(['publicacion', id])
+  }
+
   likes(idPub:any){
     this.publicacionesService.sumLikes(idPub).subscribe(data => {
       let dataResponse : ResponseLikesInterface = data;

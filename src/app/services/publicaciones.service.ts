@@ -5,6 +5,7 @@ import {ResponseSavePubliInterface} from "../modelos/SavePubliModel/responseSave
 import {Observable} from "rxjs";
 import {ResponseLikesInterface} from "../modelos/LikesModel/responseLikes.interface";
 import {ReponseInterface} from "../modelos/LoginModel/reponse.interface";
+import {ListaPublicacionesInterface} from "../modelos/PublicacionesModel/listaPublicaciones.interface"
 
 @Injectable({
   providedIn: 'root'
@@ -35,5 +36,10 @@ export class PublicacionesService {
   sumLikes(idPub:any):Observable<ResponseLikesInterface>{
     let direccion = this.url + "publicaciones/like?idPub=" + idPub;
     return this.http.put<ResponseSavePubliInterface>(direccion, idPub);
+  }
+
+  getSiglePublication(id:any){
+    let direccion = this.url + "publicaciones/verPub?idPub=" + id;
+    return this.http.get(direccion);
   }
 }

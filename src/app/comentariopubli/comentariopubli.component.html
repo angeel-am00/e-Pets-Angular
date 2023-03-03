@@ -64,31 +64,32 @@
     <div class="col-12">
     <div class="col-6">
       <section class="activities">
-        <section class="event"><span class="thumb-sm avatar pull-left mr-sm"><img class="img-circle" src="https://bootdey.com/img/Content/avatar/avatar6.png" alt="..."></span>
-          <h4 class="event-heading"><a href="#">john doe</a> <small>@jess</small></h4>
-          <p class="fs-sm text-muted">February 22, 2014 at 01:59 PM</p>
-          <p class="fs-mini">Check out this awesome photo I made in Italy last summer. Seems it was lost somewhere deep inside my brand new HDD 40TB. Thanks god I found it!</p>
+        <section class="event"><span class="thumb-sm avatar pull-left mr-sm"><img class="img-circle" src="{{datosPubli.user.imagen}}" alt="..."></span>
+          <h4 class="event-heading"><a (click)="perfilUsuario(datosPubli.user.id)">{{datosPubli.user.nombre}} {{datosPubli.user.apellidos}}</a> <small> | @{{datosPubli.user.username}}</small></h4>
+          <p class="fs-sm text-muted">{{datosPubli.fechaPu}}</p>
+          <p class="fs-mini">{{datosPubli.cuerpo}}</p>
+          <img style="max-width: 490px; max-height: 300px; text-align: center" src="{{datosPubli.imagen}}">
           <footer>
             <div class="clearfix">
               <ul class="post-links mt-sm pull-left">
-                <li><a href="#"><span class="text-danger"><i class="fa fa-heart-o"></i> Like</span></a>
+                <li><a (click)="likes(datosPubli.id)"><span class="text-danger"><i class="fa fa-heart-o"></i> {{datosPubli.likes}}</span></a>
                 </li>
               </ul>
             </div>
             <ul class="post-comments mt-sm">
               <li><span class="thumb-xs avatar pull-left mr-sm"><img class="img-circle" src="https://bootdey.com/img/Content/avatar/avatar6.png" alt="..."></span>
-                <form>
+                <form [formGroup]="crearComenForm" (ngSubmit)="saveComen(crearComenForm.value, datosPubli.id)">
                 <div class="comment-body">
-                  <input class="form-control input-sm col-12" type="text" placeholder="Escribe tu comentario...">
+                  <input class="form-control input-sm col-12" type="text" ngModel formControlName="mensaje" id="mensaje" placeholder="Escribe tu comentario...">
                   <br>
-                  <button type="submit" class="btn btn-danger btn-sm"style="margin-left: 425px">Post</button>
+                  <button type="submit" class="btn btn-danger btn-sm" style="margin-left: 425px">Post</button>
                 </div>
                 </form>
               </li>
-              <li><span class="thumb-xs avatar pull-left mr-sm"><img class="img-circle" src="https://bootdey.com/img/Content/avatar/avatar6.png" alt="..."></span>
-                <div class="comment-body">
-                  <h6 class="author fw-semi-bold">Ignacio Abad <small>6 mins ago</small></h6>
-                  <p>Hey, have you heard anything about that?</p>
+              <li *ngFor="let comentario of datosPubli.comentarios"><span class="thumb-xs avatar pull-left mr-sm"><img class="img-circle" src="{{comentario.user.imagen}}" alt="..."></span>
+                <div class="comment-body" >
+                  <h6 class="author fw-semi-bold">@{{comentario.user.username}}<small> {{comentario.fechaCom}}</small></h6>
+                  <p>{{comentario.mensaje}}</p>
                 </div>
               </li>
             </ul>
