@@ -22,9 +22,6 @@ export class UsersComponent implements OnInit{
   userListBuscados: any =[];
  termino=''
 
-
-
-
   constructor(private router:Router,private activerouter: ActivatedRoute, private usersService: UsersService) {
   }
 
@@ -70,7 +67,6 @@ export class UsersComponent implements OnInit{
   }
   guardarBusqueda(){
 
-
     localStorage.setItem('busqueda', this.termino)
     this.usuarioBuscado = localStorage.getItem('busqueda')
 
@@ -80,7 +76,6 @@ export class UsersComponent implements OnInit{
     const todos:any = document.getElementById('todos');
     buscados.style.display = 'block';
     todos.style.display = 'none';
-
 
   }
 

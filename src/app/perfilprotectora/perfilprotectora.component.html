@@ -59,17 +59,17 @@
       <img src="https://bootdey.com/img/Content/avatar/avatar6.png" alt="" class="ui-w-100 rounded-circle">
 
       <div class="col-md-8 col-lg-6 col-xl-5 p-0 mx-auto">
-        <h4 class="font-weight-bold my-4">John Doe</h4>
+        <h4 class="font-weight-bold my-4">{{datosProtectora.asociacion.userDto.nombre}} {{datosProtectora.asociacion.userDto.nombre}}</h4>
 
         <div class="mb-4">
           <span class="opacity-75">@</span>
-          <strong>username</strong>
+          <strong>{{datosProtectora.asociacion.userDto.username}}</strong>
         </div>
       </div>
 
       <div class="text-center">
         <i class="opacity-75 fa fa-street-view"></i>
-        <strong>dirección</strong>
+        <strong>{{datosProtectora.asociacion.direccion}}</strong>
 
       </div>
     </div>
@@ -81,21 +81,18 @@
       <li class="nav-item">
         <a class="nav-link text-white py-4 active">Publicaciones</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link text-white py-4" (click)="ruta3()">Animales</a>
-      </li>
     </ul>
   </div>
 </div>
 <section class="rooms-details p-0">
-  <div class="container">
+  <div   class="container">
     <div class="row mt-4">
-      <div class="col-lg-3 col-md-6 mb-4">
+      <div *ngFor="let datos of datosProtectora.publicaciones;" class="col-lg-3 col-md-6 mb-4">
         <div class="card border-0 shadow" style="max-width:350px; margin:auto;">
-          <img src="https://sosweimaraner.org/wp-content/uploads/2020/05/WhatsApp-Image-2020-05-25-at-14.56.24-1.jpeg"
+          <img src="{{datos.imagen}}"
                style="width: auto;height: auto" alt="" class="card-img-top">
           <div class="card-body">
-            <h6 class="text-center fw-bold" style="text-align: center" >Perra</h6>
+            <h6 class="text-center fw-bold" style="text-align: center" >{{datos.cuerpo}}</h6>
           </div>
         </div>
       </div>
@@ -103,6 +100,7 @@
   </div>
 
 </section>
+
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>

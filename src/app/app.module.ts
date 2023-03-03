@@ -55,6 +55,7 @@ import { LogoutComponent } from './logout/logout.component';
       {path: 'users', component: UsersComponent},
       {path: 'protectora', component: ProtectoraComponent},
       {path: 'perfilusers/:id', component: PerfilusersComponent},
+      {path: 'perfilprotectora/:id', component: PerfilprotectoraComponent},
       {path: 'perfilprotectora', component: PerfilprotectoraComponent},
       {path: 'editarperfil', component: MiperfileditarComponent},
       {path: 'miperfil', component: MiperfilComponent},

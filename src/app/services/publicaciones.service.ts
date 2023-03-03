@@ -6,6 +6,7 @@ import {Observable} from "rxjs";
 import {ResponseLikesInterface} from "../modelos/LikesModel/responseLikes.interface";
 import {ReponseInterface} from "../modelos/LoginModel/reponse.interface";
 import {ListaPublicacionesInterface} from "../modelos/PublicacionesModel/listaPublicaciones.interface"
+import {nuevaLista} from "../modelos/listausuarios.interface";
 
 @Injectable({
   providedIn: 'root'
@@ -41,5 +42,10 @@ export class PublicacionesService {
   getSiglePublication(id:any){
     let direccion = this.url + "publicaciones/verPub?idPub=" + id;
     return this.http.get(direccion);
+  }
+
+  buscarTags(tag:any):Observable<nuevaLista>{
+    let direccion = 'http://127.0.0.1:8000/api/publicaciones/buscarTag' + "?tag=" +tag;
+    return this.http.get<nuevaLista>(direccion);
   }
 }

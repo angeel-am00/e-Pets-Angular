@@ -69,32 +69,41 @@
     </div>
 
 
-    <div class="col-6">
+    <div id="toda" class="col-6">
       <ol *ngFor="let publicaciones of publicacionesList" class="tweet-list">
         <li class="tweet-card">
           <div class="tweet-content">
+            <a>
+              <img class="tweet-card-avatar"
+                   src="{{publicaciones.user.imagen}}">
+            </a>
             <div class="tweet-header">
                 <span class="fullname">
+                  <br>
                   <strong>{{publicaciones.user.nombre}} {{publicaciones.user.apellidos}}</strong>
                 </span>
                 <span class="username"> @{{publicaciones.user.username}}</span>
                 <span class="tweet-time"> {{publicaciones.fechaPu}}</span>
             </div>
-            <a>
-              <img class="tweet-card-avatar"
-                   src="https://pbs.twimg.com/profile_images/679974972278849537/bzzb-6H4_bigger.jpg" alt="">
-            </a>
+
             <div class="tweet-text">
+              <br>
+              <p class="" lang="es" data-aria-label-part="0">{{publicaciones.cuerpo}}</p>
+              <img  style="width: 200px" src="{{publicaciones.imagen}}">
+              <ul style="list-style-type: none;" *ngFor="let tags of publicaciones.tags">
+                <li style="float: left; padding: 0 4px">
+                  <button class="btn-follow"><strong>#</strong>{{tags.nombre}}</button>
+                </li>
+              </ul>
               <a (click)="verPub(publicaciones.id)">
                 <p class="" lang="es" data-aria-label-part="0">{{publicaciones.cuerpo}}
                   <a href="" class="twitter-hashtag" dir="ltr"></a>
                 </p>
               </a>
             </div>
+            <br>
+            <br>
             <div class="tweet-footer">
-              <a class="tweet-footer-btn">
-                <i class="octicon octicon-comment" aria-hidden="true"></i><span> 18</span>
-              </a>
               <a class="tweet-footer-btn">
                 <button type="submit" style="border: none; background: none" (click)="likes(publicaciones.id)"
                         class="octicon octicon-heart"
@@ -105,58 +114,69 @@
         </li>
       </ol>
     </div>
+
+
+    <div id="buscada" class="col-6">
+      <ol *ngFor="let publicaciones of publicacionListBuscados.publicaciones" class="tweet-list">
+        <li class="tweet-card">
+          <div class="tweet-content">
+            <a>
+              <img class="tweet-card-avatar" src="{{publicaciones.user.imagen}}">
+            </a>
+            <div class="tweet-header">
+                <span class="fullname">
+                  <br>
+                  <strong>{{publicaciones.user.nombre}} {{publicaciones.user.apellidos}}</strong>
+                </span>
+              <span class="username"> @ {{publicaciones.user.nombre}}</span>
+              <span class="tweet-time"> {{publicaciones.fechaPu}}</span>
+            </div>
+            <div class="tweet-text">
+              <br>
+              <p class="" lang="es" data-aria-label-part="0">{{publicaciones.cuerpo}} </p>
+              <img  style="width: 200px" src="{{publicaciones.imagen}}">
+              <ul style="list-style-type: none;" *ngFor="let tag of publicaciones.tags">
+                <li style="float: left; padding: 0 4px">
+                  <button class="btn-follow"><strong>#</strong>{{tag.nombre}}</button>
+                </li>
+              </ul>
+            </div>
+            <br>
+            <br>
+            <div class="tweet-footer">
+              <a class="tweet-footer-btn">
+                <button type="submit" style="border: none; background: none"
+                        class="octicon octicon-heart"
+                        id=""><span>{{publicaciones.likes}}</span></button>
+              </a>
+            </div>
+          </div>
+        </li>
+      </ol>
+    </div>
+
     <div class="col right-col">
       <div class="content-panel">
         <div class="panel-header">
-          <h4>Who to follow</h4><small><a href="">Refresh</a></small><small><a href="">View all</a></small>
+          <form class="d-flex">
+            <input class="form-control me-2" type="search" placeholder="Buscar Tags" aria-label="Search" [(ngModel)]="termino" name="termino" >
+            <button (click)="guardarBusqueda()" class="btn btn-outline-success me-lg-5" type="submit"> <fa-icon [icon]="faMagnifyingGlass"></fa-icon></button>
+          </form>
         </div>
         <!-- Who to Follow panel -->
         <div class="panel-content">
+          <br>
           <!--Follow list -->
-          <ol class="tweet-list">
-            <li class="tweet-card">
-              <div class="tweet-content">
-                <img class="tweet-card-avatar"
-                     src="https://pbs.twimg.com/profile_images/679974972278849537/bzzb-6H4_bigger.jpg" alt="">
-                <div class="tweet-header">
-                    <span class="fullname">
-                  <strong>Jon Vadillo</strong>
-                </span>
-                  <span class="username">@JonVadillo</span>
-                </div>
-
-                <button class="btn btn-follow">Follow</button>
-              </div>
+          <ul class="tweet-list" style="list-style-type: none;" *ngFor="let tag of tagsList">
+            <li style="float: left; padding: 0 4px">
+              <button class="btn-follow"><strong>#</strong>{{tag.nombre}}</button>
             </li>
-            <li class="tweet-card">
-              <div class="tweet-content">
-                <img class="tweet-card-avatar"
-                     src="https://pbs.twimg.com/profile_images/679974972278849537/bzzb-6H4_bigger.jpg" alt="">
-                <div class="tweet-header">
-                    <span class="fullname">
-                  <strong>Jon Vadillo</strong>
-                </span>
-                  <span class="username">@JonVadillo</span>
-                </div>
-
-                <button class="btn btn-follow">Follow</button>
-              </div>
-            </li>
-            <li class="tweet-card">
-              <div class="tweet-content">
-                <img class="tweet-card-avatar"
-                     src="https://pbs.twimg.com/profile_images/679974972278849537/bzzb-6H4_bigger.jpg" alt="">
-                <div class="tweet-header">
-                    <span class="fullname">
-                  <strong>Jon Vadillo</strong>
-                </span>
-                  <span class="username">@JonVadillo</span>
-                </div>
-
-                <button class="btn btn-follow">Follow</button>
-              </div>
-            </li>
-          </ol>
+          </ul>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
           <!--END: Follow list -->
         </div>
       </div>

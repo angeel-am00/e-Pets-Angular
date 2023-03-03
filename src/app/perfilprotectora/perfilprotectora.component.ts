@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {faHouse} from "@fortawesome/free-solid-svg-icons";
 import {faComments} from "@fortawesome/free-solid-svg-icons";
 import {faUsers} from "@fortawesome/free-solid-svg-icons";
@@ -6,17 +6,19 @@ import {faShieldDog} from "@fortawesome/free-solid-svg-icons";
 import {faDoorOpen} from "@fortawesome/free-solid-svg-icons";
 import {faUserPen} from "@fortawesome/free-solid-svg-icons";
 import {faMagnifyingGlass} from "@fortawesome/free-solid-svg-icons";
-import {Router} from "@angular/router";
+import {Router, ActivatedRoute} from "@angular/router";
+import {ProtectorasService} from "../services/protectoras.service";
+
 
 @Component({
   selector: 'app-perfilprotectora',
   templateUrl: './perfilprotectora.component.html',
   styleUrls: ['./perfilprotectora.component.css']
 })
-export class PerfilprotectoraComponent {
-  constructor(private router:Router) {
+export class PerfilprotectoraComponent implements OnInit{
+  constructor(private router:Router, private activerouter: ActivatedRoute, private protectorasService : ProtectorasService) {
   }
-
+  datosProtectora : any =[]
   ruta(){
     this.router.navigate(["users"])
   }
@@ -37,4 +39,19 @@ export class PerfilprotectoraComponent {
 
   faUserPen = faUserPen;
   faMagnifyingGlass= faMagnifyingGlass;
+
+  public perfilAsociacionId : any;
+  ngOnInit() : void{
+    this.perfilAsociacionId = this.activerouter.snapshot.paramMap.get('id');
+    this.obtenerDatos();
+
+  }
+
+  obtenerDatos(){
+    this.protectorasService.getSingleProtectora(this.perfilAsociacionId)
+      .subscribe(resp => {
+        this.datosProtectora = resp;
+        console.log(this.datosProtectora)
+      })
+  }
 }
