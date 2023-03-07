@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {faHouse} from "@fortawesome/free-solid-svg-icons";
+import {faHouse, faPaperPlane} from "@fortawesome/free-solid-svg-icons";
 import {faComments} from "@fortawesome/free-solid-svg-icons";
 import {faUsers} from "@fortawesome/free-solid-svg-icons";
 import {faShieldDog} from "@fortawesome/free-solid-svg-icons";
@@ -28,6 +28,15 @@ export class PerfilprotectoraComponent implements OnInit{
   ruta3(){
     this.router.navigate(["perfilprotectora2"])
   }
+  ruta4(){
+    this.router.navigate(["home"])
+  }
+  logout(){
+    this.router.navigate(['logout'])
+  }
+  crear(){
+    this.router.navigate(['crearPub'])
+  }
   faHouse = faHouse;
   faComments = faComments;
 
@@ -39,7 +48,7 @@ export class PerfilprotectoraComponent implements OnInit{
 
   faUserPen = faUserPen;
   faMagnifyingGlass= faMagnifyingGlass;
-
+  faPaperplane=faPaperPlane;
   public perfilAsociacionId : any;
   ngOnInit() : void{
     this.perfilAsociacionId = this.activerouter.snapshot.paramMap.get('id');

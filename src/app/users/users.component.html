@@ -36,11 +36,16 @@
         <form class="d-flex">
           <input class="form-control me-2" type="search" placeholder="Buscar Usuarios" aria-label="Search" [(ngModel)]="termino" name="termino" >
           <button (click)="guardarBusqueda()" class="btn btn-outline-success me-lg-5" type="submit"> <fa-icon [icon]="faMagnifyingGlass"></fa-icon></button>
+          <button type="button" class="btn btn-outline-primary shadow-none me-lg-3 me-2" (click)="crear()">
+            <fa-icon [icon]="faPaperplane">
+            </fa-icon>
+          </button>
+
           <button type="button" class="btn btn-outline-dark shadow-none me-lg-3 me-2">
             <fa-icon [icon]="faUserPen">
             </fa-icon>
           </button>
-          <button type="button" class="btn btn-outline-primary shadow-none me-lg-3 me-2">
+          <button type="button" (click)="logout()" class="btn btn-outline-danger shadow-none me-lg-3 me-2">
             <fa-icon [icon]="faDoorOpen">
             </fa-icon>
           </button>

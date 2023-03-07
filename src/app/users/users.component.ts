@@ -6,8 +6,10 @@ import {faShieldDog} from "@fortawesome/free-solid-svg-icons";
 import {faDoorOpen} from "@fortawesome/free-solid-svg-icons";
 import {faUserPen} from "@fortawesome/free-solid-svg-icons";
 import {faMagnifyingGlass} from "@fortawesome/free-solid-svg-icons";
+import {faPlus} from "@fortawesome/free-solid-svg-icons";
 import {ActivatedRoute,Router} from "@angular/router";
 import {UsersService} from "../services/users.service";
+import {faPaperPlane} from "@fortawesome/free-solid-svg-icons";
 import {listausuarios} from "../modelos/listausuarios.interface";
 
 
@@ -37,6 +39,12 @@ export class UsersComponent implements OnInit{
   ruta4(){
     this.router.navigate(["home"])
   }
+  logout(){
+    this.router.navigate(['logout'])
+  }
+  crear(){
+    this.router.navigate(['crearPub'])
+  }
   faHouse = faHouse;
   faComments = faComments;
 
@@ -49,6 +57,8 @@ export class UsersComponent implements OnInit{
   faUserPen = faUserPen;
 
   faMagnifyingGlass= faMagnifyingGlass;
+  faPlus=faPlus;
+  faPaperplane=faPaperPlane;
 
   busqueda = this.termino;
   public usuarioBuscado:any;

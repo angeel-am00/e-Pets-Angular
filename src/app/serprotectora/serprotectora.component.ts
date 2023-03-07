@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {faHouse} from "@fortawesome/free-solid-svg-icons";
+import {faHouse, faPaperPlane} from "@fortawesome/free-solid-svg-icons";
 import {faComments} from "@fortawesome/free-solid-svg-icons";
 import {faUsers} from "@fortawesome/free-solid-svg-icons";
 import {faShieldDog} from "@fortawesome/free-solid-svg-icons";
@@ -33,7 +33,24 @@ export class SerprotectoraComponent {
   miperfil(){
     this.router.navigate(["miperfil"])
   }
-
+  ruta(){
+    this.router.navigate(["users"])
+  }
+  ruta2(){
+    this.router.navigate(["protectora"])
+  }
+  ruta3(){
+    this.router.navigate(["perfilusers"])
+  }
+  ruta4(){
+    this.router.navigate(["home"])
+  }
+  logout(){
+    this.router.navigate(['logout'])
+  }
+  crear(){
+    this.router.navigate(['crearPub'])
+  }
   faHouse = faHouse;
   faComments = faComments;
 
@@ -51,7 +68,9 @@ export class SerprotectoraComponent {
   faTimes = faTimes;
 
   faPenSquare=faPencil;
-  faArrowLeft=faArrowLeft
+  faArrowLeft=faArrowLeft;
+
+  faPaperplane=faPaperPlane;
 
 }
 

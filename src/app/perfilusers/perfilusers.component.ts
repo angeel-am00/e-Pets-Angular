@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {faHouse} from "@fortawesome/free-solid-svg-icons";
+import {faHouse, faPaperPlane} from "@fortawesome/free-solid-svg-icons";
 import {faComments} from "@fortawesome/free-solid-svg-icons";
 import {faUsers} from "@fortawesome/free-solid-svg-icons";
 import {faShieldDog} from "@fortawesome/free-solid-svg-icons";
@@ -47,6 +47,13 @@ export class PerfilusersComponent implements OnInit{
     this.router.navigate(["miperfil"])
   }
 
+  logout(){
+    this.router.navigate(['logout'])
+  }
+  crear(){
+    this.router.navigate(['crearPub'])
+  }
+
   faHouse = faHouse;
   faComments = faComments;
 
@@ -58,6 +65,7 @@ export class PerfilusersComponent implements OnInit{
 
   faUserPen = faUserPen;
   faMagnifyingGlass= faMagnifyingGlass;
+  faPaperplane=faPaperPlane;
 
   public perfilUserId:any;
   ngOnInit(): void {

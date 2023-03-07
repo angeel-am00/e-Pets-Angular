@@ -1,11 +1,12 @@
 import {Component, OnInit} from '@angular/core';
-import {faHouse} from "@fortawesome/free-solid-svg-icons";
+import {faHouse, faPaperPlane} from "@fortawesome/free-solid-svg-icons";
 import {faComments} from "@fortawesome/free-solid-svg-icons";
 import {faUsers} from "@fortawesome/free-solid-svg-icons";
 import {faShieldDog} from "@fortawesome/free-solid-svg-icons";
 import {faDoorOpen} from "@fortawesome/free-solid-svg-icons";
 import {faUserPen} from "@fortawesome/free-solid-svg-icons";
 import {faMagnifyingGlass} from "@fortawesome/free-solid-svg-icons";
+import {faPlus} from "@fortawesome/free-solid-svg-icons";
 import {ActivatedRoute, Router} from "@angular/router";
 import {ProtectorasService} from "../services/protectoras.service";
 
@@ -33,6 +34,12 @@ export class ProtectoraComponent implements OnInit {
   ruta4(){
     this.router.navigate(["home"])
   }
+  crear(){
+    this.router.navigate(['crearPub'])
+  }
+  logout(){
+    this.router.navigate(['logout'])
+  }
   faHouse = faHouse;
   faComments = faComments;
 
@@ -44,6 +51,9 @@ export class ProtectoraComponent implements OnInit {
 
   faUserPen = faUserPen;
   faMagnifyingGlass= faMagnifyingGlass;
+
+  faPlus=faPlus;
+  faPaperplane=faPaperPlane;
 
   busqueda = this.termino;
   public protectoraBuscado:any;
