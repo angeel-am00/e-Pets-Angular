@@ -51,4 +51,15 @@ export class UsersService {
     })
     return this.http.put<ResponseSavePubliInterface>(direccion, form, {headers:httpHeaders});
   }
+
+  verLogueado(): Observable<any>{
+    let direccion = 'http://127.0.0.1:8000/api/usuario/verLogeado';
+    let token = "";
+    token = localStorage.getItem('token')!;
+    console.log(token);
+    const httpHeaders = new HttpHeaders({
+      'token': token
+    });
+    return this.http.get<any>(direccion, {headers:httpHeaders});
+  }
 }

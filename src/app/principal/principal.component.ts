@@ -16,6 +16,7 @@ import {ResponseSavePubliInterface} from "../modelos/SavePubliModel/responseSave
 import {ResponseLikesInterface} from "../modelos/LikesModel/responseLikes.interface";
 import {auto} from "@popperjs/core";
 import {TagService} from "../services/tag.service";
+import {UsersService} from "../services/users.service";
 
 
 @Component({
@@ -30,7 +31,9 @@ export class PrincipalComponent implements OnInit{
 
   publicacionListBuscados: any =[];
   termino=''
-  constructor(private router:Router, private publicacionesService: PublicacionesService, private tagService: TagService) {
+
+  datosUser:any;
+  constructor(private router:Router, private publicacionesService: PublicacionesService, private tagService: TagService, private userService: UsersService) {
   }
 
   ruta(){
@@ -53,9 +56,6 @@ export class PrincipalComponent implements OnInit{
   }
 
 
-  crear(){
-    this.router.navigate(['crearPub'])
-  }
   busqueda = this.termino;
   public publicacionBuscado:any;
   ngOnInit(): void {
@@ -65,6 +65,16 @@ export class PrincipalComponent implements OnInit{
 
     this.tagService.getTag()
       .subscribe((response : any)=> this.tagsList=response)
+
+    this.userLogeado();
+  }
+
+  userLogeado(){
+    this.userService.verLogueado()
+      .subscribe(resp => {
+        this.datosUser = resp;
+        console.log(this.datosUser)
+      })
   }
 
   verPub(id: any){

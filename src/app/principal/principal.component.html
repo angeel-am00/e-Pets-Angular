@@ -65,11 +65,11 @@
 
 <div class="container main-content">
   <div class="row">
-    <div class="col profile-col">
+    <div class="col profile-col"  *ngFor="let datos of datosUser">
       <div class="profile-header">
-        <h3 class="profile-fullname"><a>Nombre</a> <a> Apellidos</a></h3>
-        <h2 class="profile-element"><a>@username</a></h2>
-        <a class="profile-element profile-website" hrerf=""><i class="octicon octicon-location"></i>&nbsp;Dirección</a>
+        <h3 class="profile-fullname"><a>{{datos.nombre}}</a> <a> {{datos.apellidos}}</a></h3>
+        <h2 class="profile-element"><a>@{{datos.username}}</a></h2>
+        <a class="profile-element profile-website">&nbsp;{{datos.email}}</a>
       </div>
     </div>
 

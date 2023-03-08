@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {faHouse, faPaperPlane} from "@fortawesome/free-solid-svg-icons";
 import {faComments} from "@fortawesome/free-solid-svg-icons";
 import {faUsers} from "@fortawesome/free-solid-svg-icons";
@@ -20,7 +20,7 @@ import {ResponseSavePubliInterface} from "../modelos/SavePubliModel/responseSave
   templateUrl: './miperfileditar.component.html',
   styleUrls: ['./miperfileditar.component.css']
 })
-export class MiperfileditarComponent {
+export class MiperfileditarComponent implements OnInit{
   editarPerfilForm = new FormGroup({
     username: new FormControl(''),
     nombre: new FormControl(''),
@@ -29,8 +29,24 @@ export class MiperfileditarComponent {
     imagen: new FormControl('')
   })
 
+  datosUser:any;
+
   constructor(private router: Router, private UserService: UsersService) {
   }
+
+  ngOnInit(): void {
+    console.log('El componente se ha inicializado');
+    this.userLogeado();
+  }
+
+  userLogeado(){
+    this.UserService.verLogueado()
+      .subscribe(resp => {
+        this.datosUser = resp;
+        console.log(this.datosUser)
+      })
+  }
+
 
   user() {
     this.router.navigate(["users"])
