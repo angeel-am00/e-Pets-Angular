@@ -7,6 +7,7 @@ import {faShieldDog} from "@fortawesome/free-solid-svg-icons";
 import {faDoorOpen} from "@fortawesome/free-solid-svg-icons";
 import {faUserPen} from "@fortawesome/free-solid-svg-icons";
 import {faMagnifyingGlass} from "@fortawesome/free-solid-svg-icons";
+import {faPaperPlane} from "@fortawesome/free-solid-svg-icons";
 import {faPlus} from "@fortawesome/free-solid-svg-icons";
 
 import {FormControl, FormGroup, Validators} from "@angular/forms";
@@ -47,6 +48,10 @@ export class PrincipalComponent implements OnInit{
   logout(){
     this.router.navigate(['logout'])
   }
+  crear(){
+    this.router.navigate(['crearPub'])
+  }
+
 
   crear(){
     this.router.navigate(['crearPub'])
@@ -113,6 +118,8 @@ export class PrincipalComponent implements OnInit{
 
   faUserPen = faUserPen;
   faMagnifyingGlass= faMagnifyingGlass;
+  faPaperplane=faPaperPlane;
+
 
   faPlus= faPlus;
 }

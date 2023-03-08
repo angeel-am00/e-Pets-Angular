@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {Router, ActivatedRoute} from "@angular/router";
-import {faHouse} from "@fortawesome/free-solid-svg-icons";
+import {faHouse, faPaperPlane} from "@fortawesome/free-solid-svg-icons";
 import {faComments} from "@fortawesome/free-solid-svg-icons";
 import {faUsers} from "@fortawesome/free-solid-svg-icons";
 import {faShieldDog} from "@fortawesome/free-solid-svg-icons";
@@ -55,6 +55,24 @@ export class ComentariopubliComponent implements OnInit {
 
   ruta6() {
     this.router.navigate(["editarperfil"])
+  }
+  ruta(){
+    this.router.navigate(["users"])
+  }
+  ruta2(){
+    this.router.navigate(["protectora"])
+  }
+  ruta3(){
+    this.router.navigate(["perfilusers"])
+  }
+  ruta4(){
+    this.router.navigate(["home"])
+  }
+  logout(){
+    this.router.navigate(['logout'])
+  }
+  crear(){
+    this.router.navigate(['crearPub'])
   }
 
   getToken() {
@@ -134,4 +152,5 @@ export class ComentariopubliComponent implements OnInit {
   faPenSquare = faPencil;
 
   faArrowLeft = faArrowLeft
+  faPaperplane=faPaperPlane;
 }
