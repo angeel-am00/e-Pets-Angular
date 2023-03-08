@@ -7,6 +7,7 @@ import {ResponseLikesInterface} from "../modelos/LikesModel/responseLikes.interf
 import {ReponseInterface} from "../modelos/LoginModel/reponse.interface";
 import {ListaPublicacionesInterface} from "../modelos/PublicacionesModel/listaPublicaciones.interface"
 import {nuevaLista} from "../modelos/listausuarios.interface";
+import {ResponseCambiarEstadoPubInterface} from "../modelos/CambiarEstadoPub/responseCambiarEstadoPub.interface";
 
 @Injectable({
   providedIn: 'root'
@@ -21,6 +22,21 @@ export class PublicacionesService {
 
   getPublicaciones(): any{
     return this.http.get('http://127.0.0.1:8000/api/publicaciones/list' );
+  }
+
+  getPublicacionesAcabadas():Observable<any>{
+    let direccion = this.url + "publicaciones/list/acabadas";
+    let token = "";
+    token = localStorage.getItem('token')!;
+    const httpHeaders = new HttpHeaders({
+      'token': token
+    });
+    return this.http.get<any>(direccion, {headers:httpHeaders});
+  }
+
+  cambiarEstadoPub(idPub:any): Observable<ResponseCambiarEstadoPubInterface>{
+    let direccion = this.url + "publicaciones/cambiar?idPub=" + idPub;
+    return this.http.put<ResponseCambiarEstadoPubInterface>(direccion, null);
   }
 
   savePublicacion(form:SavePubliInterface): Observable<ResponseSavePubliInterface>{

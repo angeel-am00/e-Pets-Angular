@@ -12,76 +12,81 @@
 </head>
 
 <body>
-  <header>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <div class="container-fluid">
-        <a class="navbar-brand" (click)="home()"><img
-          src="https://i.postimg.cc/MZvrmCym/Screenshot-2-removebg-preview.png"
-          height="55" width="55" alt=""></a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a class="nav-link" aria-current="page" (click)="home()">
-                <fa-icon [icon]="faHouse"></fa-icon>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" (click)="user()">
-                <fa-icon [icon]="faUsers"></fa-icon>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" (click)="protectora()">
-                <fa-icon [icon]="faShieldDog"></fa-icon>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link">
-                <fa-icon [icon]="faComments"></fa-icon>
-              </a>
-            </li>
-          </ul>
-          <form class="d-flex">
-            <button type="button" class="btn btn-outline-dark shadow-none me-lg-3 me-2" (click)="miperfil()">
-              <fa-icon [icon]="faUserPen">
-              </fa-icon>
-            </button>
-            <button type="button" class="btn btn-outline-primary shadow-none me-lg-3 me-2">
-              <fa-icon [icon]="faDoorOpen">
-              </fa-icon>
-            </button>
-          </form>
-        </div>
+<header>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" (click)="home()"><img
+        src="https://i.postimg.cc/MZvrmCym/Screenshot-2-removebg-preview.png"
+        height="55" width="55" alt=""></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" (click)="home()">
+              <fa-icon [icon]="faHouse"></fa-icon>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" (click)="user()">
+              <fa-icon [icon]="faUsers"></fa-icon>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" (click)="protectora()">
+              <fa-icon [icon]="faShieldDog"></fa-icon>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link">
+              <fa-icon [icon]="faComments"></fa-icon>
+            </a>
+          </li>
+        </ul>
+        <form class="d-flex">
+          <button type="button" class="btn btn-outline-dark shadow-none me-lg-3 me-2" (click)="miperfil()">
+            <fa-icon [icon]="faUserPen">
+            </fa-icon>
+          </button>
+          <button type="button" class="btn btn-outline-primary shadow-none me-lg-3 me-2">
+            <fa-icon [icon]="faDoorOpen">
+            </fa-icon>
+          </button>
+        </form>
       </div>
-    </nav>
-  </header>
+    </div>
+  </nav>
+</header>
 
 <div class="container">
   <div class="main-body">
 
 
     <div class="row gutters-sm">
-      <div class="col-md-4 mb-3">
+      <div class="col-md-4 mb-3" *ngFor="let datos of datosUser.usuario">
         <div class="card">
           <div class="card-body">
             <div class="d-flex flex-column align-items-center text-center">
-              <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Admin" class="rounded-circle"
+              <img src="{{datos.imagen}}" alt="Admin" class="rounded-circle"
                    width="150">
               <div class="mt-3">
-                <h4>John Doe</h4>
-                <p class="text-secondary mb-1">Full Stack Developer</p>
-                <p class="text-muted font-size-sm">Bay Area, San Francisco, CA</p>
-                <button class="btn btn-outline-primary" (click)="serprotectora()">Ser Protectora</button>
+                <h4>{{datos.nombre}} {{datos.apellidos}}</h4>
+                <p class="text-secondary mb-1">@{{datos.username}}</p>
+                <p class="text-muted font-size-sm">{{datos.email}}</p>
+                <div *ngIf="datos.protectora==1">
+                  <button class="btn btn-outline-danger" (click)="noSerProtectora()">Dejar de ser protectora</button>
+                </div>
+                <div *ngIf="datos.protectora==0">
+                  <button class="btn btn-outline-primary" (click)="serprotectora()">Ser Protectora</button>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <div class="col-md-8" style="margin-bottom: 75px;">
+      <div class="col-md-8" style="margin-bottom: 75px;" *ngFor="let datos of datosUser.usuario">
         <div class="card mb-3">
           <div class="card-body">
             <div class="row">
@@ -89,7 +94,7 @@
                 <h6 class="mb-0">Nombre completo</h6>
               </div>
               <div class="col-sm-9 text-secondary">
-                Kenneth Valdez
+                {{datos.nombre}} {{datos.apellidos}}
               </div>
             </div>
             <hr>
@@ -98,7 +103,7 @@
                 <h6 class="mb-0">Username</h6>
               </div>
               <div class="col-sm-9 text-secondary">
-                fip@jukmuh.al
+                @{{datos.username}}
               </div>
             </div>
             <hr>
@@ -107,7 +112,7 @@
                 <h6 class="mb-0">Email</h6>
               </div>
               <div class="col-sm-9 text-secondary">
-                (239) 816-9029
+                {{datos.email}}
               </div>
             </div>
             <hr>
@@ -116,15 +121,17 @@
                 <h6 class="mb-0">Teléfono</h6>
               </div>
               <div class="col-sm-9 text-secondary">
-                (320) 380-4539
+                {{datos.telefono}}
               </div>
             </div>
             <hr>
             <div class="row">
               <div class="col-sm-12">
                 <a class="btn btn-outline-dark " target="blank"
-                   (click)="ruta6()"><fa-icon [icon]="faPenSquare">
-                </fa-icon></a>
+                   (click)="ruta6()">
+                  <fa-icon [icon]="faPenSquare">
+                  </fa-icon>
+                </a>
               </div>
             </div>
           </div>
@@ -136,22 +143,26 @@
         <ngb-panel title="Mis publicaciones activas">
           <ng-template ngbPanelContent>
             <div class="container"><br>
-            <div class="row mt-4">
-              <div class="col-lg-3 col-md-6 mb-4">
-                <div class="card border-0 shadow" style="max-width:350px; margin:auto;">
-                  <img src="https://sosweimaraner.org/wp-content/uploads/2020/05/WhatsApp-Image-2020-05-25-at-14.56.24-1.jpeg"
-                       style="width: auto;height: auto" alt="" class="card-img-top">
-                  <div class="card-body">
-                    <h6 class="text-center fw-bold" style="text-align: center" >Perra</h6>
-                    <div style="text-align: center">
-                      <button class="text-center btn btn-outline-danger"><fa-icon [icon]="faTimes">
-                      </fa-icon></button>
+              <div class="row mt-4">
+                <div class="col-lg-3 col-md-6 mb-4" *ngFor="let datos of datosUser.publicaciones">
+                  <div class="card border-0 shadow" style="max-width:350px; margin:auto;">
+                    <img (click)="verPub(datos.id)" src="{{datos.imagen}}"
+                         style="width: auto;height: auto" alt="" class="card-img-top">
+                    <div class="card-body">
+                      <h6 class="text-center fw-bold" style="text-align: center"
+                          (click)="verPub(datos.id)">{{datos.cuerpo}}</h6>
+                      <p class="small text-muted" style="text-align: center;">{{datos.fechaPu}}</p>
+                      <div style="text-align: center">
+                        <button (click)="cambiarEstadoPub(datos.id)" class="text-center btn btn-outline-danger">
+                          <fa-icon [icon]="faTimes">
+                          </fa-icon>
+                        </button>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
           </ng-template>
         </ngb-panel>
 
@@ -159,15 +170,18 @@
           <ng-template ngbPanelContent>
             <div class="container"><br>
               <div class="row mt-4">
-                <div class="col-lg-3 col-md-6 mb-4">
+                <div class="col-lg-3 col-md-6 mb-4" *ngFor="let datos of publicacionesAcabadas.acabadas">
                   <div class="card border-0 shadow" style="max-width:350px; margin:auto;">
-                    <img src="https://sosweimaraner.org/wp-content/uploads/2020/05/WhatsApp-Image-2020-05-25-at-14.56.24-1.jpeg"
+                    <img src="{{datos.imagen}}"
                          style="width: auto;height: auto" alt="" class="card-img-top">
                     <div class="card-body">
-                      <h6 class="text-center fw-bold" style="text-align: center" >Perra</h6>
+                      <h6 class="text-center fw-bold" style="text-align: center">{{datos.cuerpo}}</h6>
+                      <p class="small text-muted" style="text-align: center;">{{datos.fechaPu}}</p>
                       <div style="text-align: center">
-                        <button class="text-center btn btn-outline-success"><fa-icon [icon]="faCheck">
-                        </fa-icon></button>
+                        <button (click)="cambiarEstadoPub(datos.id)" class="text-center btn btn-outline-success">
+                          <fa-icon [icon]="faCheck">
+                          </fa-icon>
+                        </button>
                       </div>
                     </div>
                   </div>
@@ -177,7 +191,7 @@
           </ng-template>
         </ngb-panel>
       </ngb-accordion>
-      </div>
+    </div>
   </div>
 </div>
 </body>

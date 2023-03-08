@@ -44,6 +44,11 @@
           </li>
         </ul>
         <form class="d-flex">
+          <button type="button" class="btn btn-outline-danger shadow-none me-lg-3 me-2" (click)="crear()">
+          <fa-icon [icon]="faPlus">
+          </fa-icon>
+        </button>
+
           <button type="button" class="btn btn-outline-dark shadow-none me-lg-3 me-2">
             <fa-icon [icon]="faUserPen">
             </fa-icon>
@@ -80,25 +85,22 @@
             <div class="tweet-header">
                 <span class="fullname">
                   <br>
-                  <strong>{{publicaciones.user.nombre}} {{publicaciones.user.apellidos}}</strong>
+                  <strong (click)="perfilUsuario(publicaciones.user.id)">{{publicaciones.user.nombre}} {{publicaciones.user.apellidos}}</strong>
                 </span>
-                <span class="username"> @{{publicaciones.user.username}}</span>
-                <span class="tweet-time"> {{publicaciones.fechaPu}}</span>
+              <span class="username"> @{{publicaciones.user.username}}</span>
+              <span class="tweet-time"> {{publicaciones.fechaPu}}</span>
             </div>
 
             <div class="tweet-text">
               <br>
-              <p class="" lang="es" data-aria-label-part="0">{{publicaciones.cuerpo}}</p>
-              <img  style="width: 200px" src="{{publicaciones.imagen}}">
+              <p class="" lang="es" data-aria-label-part="0" (click)="verPub(publicaciones.id)">{{publicaciones.cuerpo}}</p>
+              <img style="width: 200px" src="{{publicaciones.imagen}}">
               <ul style="list-style-type: none;" *ngFor="let tags of publicaciones.tags">
                 <li style="float: left; padding: 0 4px">
                   <button class="btn-follow"><strong>#</strong>{{tags.nombre}}</button>
                 </li>
               </ul>
               <a (click)="verPub(publicaciones.id)">
-                <p class="" lang="es" data-aria-label-part="0">{{publicaciones.cuerpo}}
-                  <a href="" class="twitter-hashtag" dir="ltr"></a>
-                </p>
               </a>
             </div>
             <br>
@@ -117,7 +119,7 @@
 
 
     <div id="buscada" class="col-6">
-      <ol *ngFor="let publicaciones of publicacionListBuscados.publicaciones" class="tweet-list">
+      <ol *ngFor="let publicaciones of publicacionListBuscados" class="tweet-list">
         <li class="tweet-card">
           <div class="tweet-content">
             <a>
@@ -134,7 +136,7 @@
             <div class="tweet-text">
               <br>
               <p class="" lang="es" data-aria-label-part="0">{{publicaciones.cuerpo}} </p>
-              <img  style="width: 200px" src="{{publicaciones.imagen}}">
+              <img style="width: 200px" src="{{publicaciones.imagen}}">
               <ul style="list-style-type: none;" *ngFor="let tag of publicaciones.tags">
                 <li style="float: left; padding: 0 4px">
                   <button class="btn-follow"><strong>#</strong>{{tag.nombre}}</button>
@@ -159,8 +161,11 @@
       <div class="content-panel">
         <div class="panel-header">
           <form class="d-flex">
-            <input class="form-control me-2" type="search" placeholder="Buscar Tags" aria-label="Search" [(ngModel)]="termino" name="termino" >
-            <button (click)="guardarBusqueda()" class="btn btn-outline-success me-lg-5" type="submit"> <fa-icon [icon]="faMagnifyingGlass"></fa-icon></button>
+            <input class="form-control me-2" type="search" placeholder="Buscar Tags" aria-label="Search"
+                   [(ngModel)]="termino" name="termino">
+            <button (click)="guardarBusqueda()" class="btn btn-outline-success me-lg-5" type="submit">
+              <fa-icon [icon]="faMagnifyingGlass"></fa-icon>
+            </button>
           </form>
         </div>
         <!-- Who to Follow panel -->

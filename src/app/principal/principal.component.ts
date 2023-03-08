@@ -7,6 +7,8 @@ import {faShieldDog} from "@fortawesome/free-solid-svg-icons";
 import {faDoorOpen} from "@fortawesome/free-solid-svg-icons";
 import {faUserPen} from "@fortawesome/free-solid-svg-icons";
 import {faMagnifyingGlass} from "@fortawesome/free-solid-svg-icons";
+import {faPlus} from "@fortawesome/free-solid-svg-icons";
+
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {PublicacionesService} from "../services/publicaciones.service";
 import {ResponseSavePubliInterface} from "../modelos/SavePubliModel/responseSavePubli.interface";
@@ -46,6 +48,9 @@ export class PrincipalComponent implements OnInit{
     this.router.navigate(['logout'])
   }
 
+  crear(){
+    this.router.navigate(['crearPub'])
+  }
   busqueda = this.termino;
   public publicacionBuscado:any;
   ngOnInit(): void {
@@ -60,6 +65,11 @@ export class PrincipalComponent implements OnInit{
   verPub(id: any){
     console.log(id);
     this.router.navigate(['publicacion', id])
+  }
+
+  perfilUsuario(id: any) {
+    console.log(id);
+    this.router.navigate(['perfilusers', id])
   }
 
   likes(idPub:any){
@@ -104,4 +114,5 @@ export class PrincipalComponent implements OnInit{
   faUserPen = faUserPen;
   faMagnifyingGlass= faMagnifyingGlass;
 
+  faPlus= faPlus;
 }

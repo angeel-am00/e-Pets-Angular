@@ -73,46 +73,50 @@
               </div>
             </div>
             <br>
-            <div class="row">
-              <div class="col-sm-3">
-                <h6 class="mb-0">Dirreción</h6>
+            <form [formGroup]="serProtectoraForm" (ngSubmit)="serProtectora(serProtectoraForm.value)">
+              <div class="row">
+                <div class="col-sm-3">
+                  <h6 class="mb-0">Dirreción</h6>
+                </div>
+                <div class="col-sm-9 text-secondary">
+                  <input type="text" class="form-control" ngModel formControlName="direccion" id="direccion" placeholder="Direccion donde se encuentra la protectora">
+                </div>
               </div>
-              <div class="col-sm-9 text-secondary">
-                <input type="text" class="form-control" value="john@example.com">
-              </div>
-            </div>
-            <hr>
-            <div class="row">
-              <div class="col-sm-3">
+              <hr>
+              <div class="row">
+                <div class="col-sm-3">
                   <h6 class="mb-0">Capacidad</h6>
+                </div>
+                <div class="col-sm-9 text-secondary">
+                  <input type="number" ngModel formControlName="capacidad" id="capacidad" class="form-control" placeholder="Capacidad de la protectora">
+                </div>
               </div>
-              <div class="col-sm-9 text-secondary">
-                <input type="text" class="form-control" value="John Doe">
+              <hr>
+              <div class="row">
+                <div class="col-sm-3">
+                  <h6 class="mb-0">Logo de la protectora</h6>
+                </div>
+                <div class="col-sm-9 text-secondary">
+                  <input type="text" ngModel formControlName="logo" id="logo" class="form-control" placeholder="url del logo de la protectora">
+                </div>
               </div>
-            </div>
-            <hr>
-            <div class="row">
-              <div class="col-sm-3">
-                <h6 class="mb-0">Logo de la protectora</h6>
-              </div>
-              <div class="col-sm-9 text-secondary">
-                <input type="text" class="form-control" value="John Doe">
-              </div>
-            </div>
-            <hr>
-            <div class="row">
-              <div class="col-sm-12 text-secondary">
-                <button type="submit" class="btn btn-outline-success px-4"> Guardar Datos
-                  <fa-icon [icon]="faCheck">
-                  </fa-icon>
-                </button>
-                <button style="margin-left: 12px" type="submit" class="btn btn-outline-danger px-4" (click)="miperfil()">
-                  <fa-icon [icon]="faArrowLeft">
-                  </fa-icon> Volver
-                </button>
+              <hr>
+              <div class="row">
+                <div class="col-sm-12 text-secondary">
+                  <button type="submit" class="btn btn-outline-success px-4"> Guardar Datos
+                    <fa-icon [icon]="faCheck">
+                    </fa-icon>
+                  </button>
+                  <button style="margin-left: 12px" type="submit" class="btn btn-outline-danger px-4"
+                          (click)="miperfil()">
+                    <fa-icon [icon]="faArrowLeft">
+                    </fa-icon>
+                    Volver
+                  </button>
 
+                </div>
               </div>
-            </div>
+            </form>
           </div>
         </div>
       </div>

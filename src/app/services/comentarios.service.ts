@@ -17,6 +17,7 @@ export class ComentariosService{
 
   saveComentario(form:SaveComenInterface, idPub:any){
     let direccion = this.url + "comentarios/saveComen?idPub=" + idPub;
+    console.log(direccion);
     let token =  "";
     token = localStorage.getItem('token')!;
     console.log(token);

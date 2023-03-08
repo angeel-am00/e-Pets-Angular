@@ -11,6 +11,10 @@ import {faTimes} from "@fortawesome/free-solid-svg-icons";
 import {Router} from "@angular/router";
 import {faPencil} from "@fortawesome/free-solid-svg-icons";
 import {faArrowLeft} from "@fortawesome/free-solid-svg-icons";
+import {FormControl, FormGroup, Validators} from "@angular/forms";
+import {ProtectoraService} from "../services/protectora.service";
+import {ResponseSaveProtectoraInterface} from "../modelos/ProtectoraModel/responseSaveProtectora.interface";
+
 @Component({
   selector: 'app-serprotectora',
   templateUrl: './serprotectora.component.html',
@@ -18,7 +22,25 @@ import {faArrowLeft} from "@fortawesome/free-solid-svg-icons";
 })
 export class SerprotectoraComponent {
 
-  constructor(private router:Router) {
+  serProtectoraForm = new FormGroup({
+    direccion: new FormControl('', Validators.required),
+    capacidad: new FormControl('', Validators.required),
+    logo: new FormControl('')
+  })
+
+  constructor(private router:Router, private protectoraService:ProtectoraService) {
+  }
+
+  serProtectora(form:any){
+    console.log(form);
+    this.protectoraService.serProtectora(form).subscribe(data =>{
+      let dataResponse : ResponseSaveProtectoraInterface = data;
+      if(dataResponse.error){
+        console.log(dataResponse.error);
+      }else {
+        this.router.navigate(['miperfil']);
+      }
+    })
   }
   user(){
     this.router.navigate(["users"])
