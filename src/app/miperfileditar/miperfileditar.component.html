@@ -83,15 +83,18 @@
           </div>
         </div>
       </div>
+
       <div class="col-md-8">
         <div class="card mb-3">
+          <form [formGroup]="editarPerfilForm" (ngSubmit)="editarPerfil(editarPerfilForm.value)" >
           <div class="card-body">
+
             <div class="row">
               <div class="col-sm-3">
                 <h6 class="mb-0">Username</h6>
               </div>
               <div class="col-sm-9 text-secondary">
-                <input type="text" class="form-control" value="john@example.com">
+                <input type="text" ngModel formControlName="username"  class="form-control" >
               </div>
             </div>
             <hr>
@@ -100,7 +103,7 @@
                 <h6 class="mb-0">Nombre</h6>
               </div>
               <div class="col-sm-9 text-secondary">
-                <input type="text" class="form-control" value="John Doe">
+                <input type="text" ngModel formControlName="nombre" class="form-control" >
               </div>
             </div>
             <hr>
@@ -109,7 +112,7 @@
                 <h6 class="mb-0">Apellidos</h6>
               </div>
               <div class="col-sm-9 text-secondary">
-                <input type="text" class="form-control" value="John Doe">
+                <input type="text" class="form-control" ngModel formControlName="apellidos">
               </div>
             </div>
             <hr>
@@ -118,7 +121,7 @@
                 <h6 class="mb-0">Teléfono</h6>
               </div>
               <div class="col-sm-9 text-secondary">
-                <input type="text" class="form-control" value="(23 816-9029">
+                <input type="text" class="form-control" ngModel formControlName="telefono">
               </div>
             </div>
             <hr>
@@ -127,7 +130,7 @@
                 <h6 class="mb-0">Foto del perfil</h6>
               </div>
               <div class="col-sm-9 text-secondary">
-                <input type="text" class="form-control" value="(23 816-9029">
+                <input type="text" class="form-control" ngModel formControlName="imagen">
               </div>
             </div>
             <hr>
@@ -144,7 +147,9 @@
 
               </div>
             </div>
+
           </div>
+          </form>
         </div>
       </div>
     </div>
