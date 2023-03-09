@@ -40,6 +40,9 @@ export class ProtectoraComponent implements OnInit {
   logout(){
     this.router.navigate(['logout'])
   }
+  miperfil(){
+    this.router.navigate(['miperfil'])
+  }
   faHouse = faHouse;
   faComments = faComments;
 

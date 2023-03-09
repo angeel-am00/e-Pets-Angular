@@ -58,6 +58,7 @@ export class MiperfileditarComponent implements OnInit{
   tags(){
     this.router.navigate(["crearTags"])
   }
+
   home() {
     this.router.navigate(["home"])
   }

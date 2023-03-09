@@ -47,6 +47,9 @@ export class PerfilusersComponent implements OnInit{
   crear(){
     this.router.navigate(['crearPub'])
   }
+  miperfil(){
+    this.router.navigate(['miperfil'])
+  }
 
   faHouse = faHouse;
   faComments = faComments;

@@ -78,7 +78,7 @@ export class CrearTagsComponent implements OnInit {
     this.router.navigate(["home"])
   }
 
-  ruta5(){
+  miperfil(){
     this.router.navigate(["miperfil"])
   }
 

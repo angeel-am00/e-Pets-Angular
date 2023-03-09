@@ -47,7 +47,7 @@
             </fa-icon>
           </button>
 
-          <button type="button" class="btn btn-outline-dark shadow-none me-lg-3 me-2">
+          <button type="button" class="btn btn-outline-dark shadow-none me-lg-3 me-2" (click)="miperfil()">
             <fa-icon [icon]="faUserPen">
             </fa-icon>
           </button>
@@ -92,9 +92,9 @@
                   <ngb-accordion>
                     <ngb-panel title="Ver tags activos de mi publicacion">
                       <ng-template ngbPanelContent>
-                        <ul class="tweet-list" style="list-style-type: none;"
+                        <ul class="tweet-list"
                             *ngFor="let tags of publicacionesList.tags">
-                          <li style="float: left; padding: 0 4px">
+                          <li>
                             <button class="btn-follow"><strong>#</strong>{{tags.nombre}}</button>
                           </li>
                         </ul>
@@ -108,11 +108,13 @@
                   <ngb-accordion>
                     <ngb-panel title="Ver tags que se pueden añadir a la publicacion">
                       <ng-template ngbPanelContent>
-                        <ul class="tweet-list" style="list-style-type: none;" *ngFor="let tag of tagsList">
-                          <li style="float: left; padding: 0 4px">
+                        <ul class="tweet-list" *ngFor="let tag of tagsList">
+                          <li>
                             <button class="btn-follow"><strong>#</strong>{{tag.nombre}}</button>
                           </li>
                         </ul>
+                        <br>
+                        <br>
                       </ng-template>
                     </ngb-panel>
                   </ngb-accordion>

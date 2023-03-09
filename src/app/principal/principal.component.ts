@@ -55,7 +55,9 @@ export class PrincipalComponent implements OnInit{
     this.router.navigate(['crearPub'])
   }
 
-
+  miperfil(){
+    this.router.navigate(['miperfil'])
+  }
   busqueda = this.termino;
   public publicacionBuscado:any;
   ngOnInit(): void {

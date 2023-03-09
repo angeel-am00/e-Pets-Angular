@@ -25,6 +25,9 @@ export class PerfilprotectoraComponent implements OnInit{
   ruta2(){
     this.router.navigate(["protectora"])
   }
+  miperfil(){
+    this.router.navigate(['miperfil'])
+  }
   ruta3(){
     this.router.navigate(["perfilprotectora2"])
   }
