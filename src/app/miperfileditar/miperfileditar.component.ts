@@ -55,7 +55,9 @@ export class MiperfileditarComponent implements OnInit{
   protectora() {
     this.router.navigate(["protectora"])
   }
-
+  tags(){
+    this.router.navigate(["crearTags"])
+  }
   home() {
     this.router.navigate(["home"])
   }

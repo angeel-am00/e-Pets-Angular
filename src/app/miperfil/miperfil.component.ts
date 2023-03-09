@@ -113,7 +113,9 @@ export class MiperfilComponent implements OnInit{
   serprotectora(){
     this.router.navigate(["serprotectora"])
   }
-
+  tags(idPub:any){
+    this.router.navigate(["crearTags", idPub])
+  }
   ruta6(){
     this.router.navigate(["editarperfil"])
   }

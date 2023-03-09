@@ -22,6 +22,7 @@ import { SerprotectoraComponent } from './serprotectora/serprotectora.component'
 import { ComentariopubliComponent } from './comentariopubli/comentariopubli.component';
 import { CrearPublicacionesComponent } from './crear-publicaciones/crear-publicaciones.component';
 import { LogoutComponent } from './logout/logout.component';
+import { CrearTagsComponent } from './crear-tags/crear-tags.component';
 
 
 
@@ -41,7 +42,7 @@ import { LogoutComponent } from './logout/logout.component';
     SerprotectoraComponent,
     ComentariopubliComponent,
     CrearPublicacionesComponent,
-
+    CrearTagsComponent,
   ],
   imports: [
     BrowserModule,
@@ -63,6 +64,7 @@ import { LogoutComponent } from './logout/logout.component';
       {path: 'publicacion/:id', component: ComentariopubliComponent},
       {path: 'crearPub', component: CrearPublicacionesComponent},
       {path: 'logout', component: LogoutComponent},
+      {path: 'crearTags/:id', component: CrearTagsComponent},
     ]),
     FontAwesomeModule,
     FormsModule,
